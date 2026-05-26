@@ -231,6 +231,12 @@ description: 从 URL 或本地文件自动摄入知识到 AI 知识库。支持 
 | 内容与已有知识高度重复 | 只补充增量信息到已有页面，不重复创建 |
 | URL 无法识别类型 | 默认按网页处理，使用 WebFetch 抓取 |
 | 内容与 AI/LLM 主题无关 | 提醒用户这是 AI 知识库，询问是否仍要摄入 |
+| Pre-Ingest 工作区脏 | 停下，列出 dirty 文件，提示先 commit 或 stash |
+| Pre-Ingest `git pull` 冲突或失败 | 停下，输出 stderr，**不要**自动 resolve 或 rebase |
+| Pre-Ingest 分支名已占用 | 依次尝试 `-2`、`-3`、…，直到唯一 |
+| Phase 6 无 staged 改动 | 跳过 commit 和 PR；Phase 5 写"无新内容可发布" |
+| Phase 6 `git push` 失败 | 保留本地 commit；Phase 5 写 push 失败信息 |
+| Phase 6 `gh pr create` 失败 | 远端分支保留；Phase 5 输出 compare URL 让用户手动开 PR |
 
 ## 约束
 
