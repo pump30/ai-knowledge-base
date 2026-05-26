@@ -4,12 +4,15 @@
 
 ---
 
-## Concepts (10)
+## Concepts (15)
 
 | Page | Description | Sources | Updated |
 |------|-------------|---------|---------|
 | [[transformer-architecture]] | Transformer 核心架构：Self-Attention、Q/K/V、现代改进 | 3篇 | 2026-05-24 |
 | [[attention-mechanism]] | Attention 机制：Self/Masked/Cross、Multi-Head、GQA | 2篇 | 2026-05-24 |
+| [[training-loop]] | 训练循环：Forward/Loss/Backward/Optimizer + Pretrain/SFT/RLHF | 2篇 | 2026-05-26 |
+| [[next-token-prediction]] | 自回归训练：Decoder-only 模型的核心训练范式 | 4篇 | 2026-05-26 |
+| [[masked-language-modeling]] | MLM 训练方式：BERT 的双向遮盖预测 | 4篇 | 2026-05-26 |
 | [[prompt-engineering]] | Prompt 设计两大原则、六大策略、迭代开发 | 2篇 | 2026-05-24 |
 | [[rag-retrieval-augmented-generation]] | RAG 全流程：检索增强生成、Sentence Window、Auto-merging | 4篇 | 2026-05-24 |
 | [[embedding-models]] | Embedding 演进：Word2Vec→BERT→Dual Encoder、对比学习 | 2篇 | 2026-05-24 |
@@ -49,7 +52,7 @@
 
 ---
 
-## Sources Ingested (18)
+## Sources Ingested (19)
 
 | File | Title | Date |
 |------|-------|------|
@@ -71,9 +74,10 @@
 | mcp-rich-context-ai-apps-anthropic | MCP 富上下文 AI 应用 | 2026-01-13 |
 | claude-code-agentic-coding-assistant | Claude Code 自主编程助手 | 2026-01-14 |
 | agent-skills-anthropic | Anthropic Agent Skills | 2026-01-15 |
+| 2026-05-26_transformer-training-conversation | Transformer 训练原理对话 | 2026-05-26 |
 
 ---
 
-*Last health check: 2026-05-24 (initial ingest)*
-*Total VKI pages: 22*
-*Total sources: 18*
+*Last health check: 2026-05-26 (added training-related concepts)*
+*Total VKI pages: 25*
+*Total sources: 19*
