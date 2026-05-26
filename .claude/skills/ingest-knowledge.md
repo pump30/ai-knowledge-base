@@ -198,6 +198,27 @@ description: 从 URL 或本地文件自动摄入知识到 AI 知识库。支持 
   - 更新: concept/zzz（新增了关于...的信息）
   - 发现关联: [[a]] ↔ [[b]]
   - 观察: "某概念" 出现1次，暂不创建页面
+✓ 已推送分支: ingest/YYYY-MM-DD-<slug>
+✓ PR 已创建: https://github.com/pump30/ai-knowledge-base/pull/N
+```
+
+**Push 失败时**，最后两行替换为：
+
+```
+✗ Push 失败: <stderr>。本地分支 ingest/... 和 commit <hash> 已保留。
+```
+
+**`gh pr create` 失败（push 成功）时**，最后两行替换为：
+
+```
+✓ 分支已推送: ingest/...
+✗ gh pr create 失败: <stderr>。请手动开 PR: https://github.com/pump30/ai-knowledge-base/compare/main...ingest/...
+```
+
+**无新内容可发布时**（Phase 6 step 1 检测到 nothing to stage），最后两行替换为：
+
+```
+ℹ 无新内容可发布（VKI 与 sources 均无变更）。
 ```
 
 ## 错误处理
