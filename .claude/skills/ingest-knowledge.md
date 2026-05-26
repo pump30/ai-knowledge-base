@@ -14,6 +14,27 @@ description: 从 URL 或本地文件自动摄入知识到 AI 知识库。支持 
 - 用户说"学这个"、"ingest"、"摄入"、"加入知识库"
 - 用户给了一个本地文件路径（.pdf、.md、.txt、.epub）
 
+## Pre-Ingest（执行前的准备）
+
+在 Phase 1 之前必须先完成以下步骤。任何一步失败或检测到不应自动处理的状态时，**停下并向用户报告**，不要继续。
+
+1. **检查工作区干净**：运行 `git status --short`。
+   - 输出非空 → 停下，列出未提交的文件，提示用户："工作区有未提交改动，请先 commit 或 stash 再摄入。"
+2. **切回 main**：运行 `git checkout main`。
+   - 失败（例如分支不存在、checkout 冲突）→ 停下报告。
+3. **拉取最新**：运行 `git pull origin main`。
+   - 报告冲突或失败 → 停下，输出 stderr，不要自动 resolve、不要 rebase。
+4. **创建摄入分支**：运行 `git checkout -b ingest/YYYY-MM-DD-<slug>`。
+   - `YYYY-MM-DD` 用今天的日期。
+   - `<slug>` = 内容主题的 kebab-case 短描述（与即将写入的 source 文件名 slug 保持一致）。
+   - 若分支名已存在 → 依次尝试 `-2`、`-3`、…，直到找到未占用的名字。
+   - 若当前已在某个 `ingest/*` 分支上，先 `git checkout main` 再走步骤 3、4，避免分支套娃。
+
+### 分支命名示例
+
+- `ingest/2026-05-26-rag-evaluation-best-practices`
+- `ingest/2026-05-26-langgraph-streaming-2`（若 `-langgraph-streaming` 已存在）
+
 ## 执行流程
 
 ### Phase 1: 识别来源类型并提取内容
