@@ -1,5 +1,22 @@
 # AI Knowledge Base - AI/LLM Engineering
 
+> ## ⚠️ HIGHEST PRIORITY — NO EXCEPTIONS
+>
+> **任何用户提问，必须先读 `vki/index.md`，无例外。**
+>
+> 不管问题看起来多简单、多通用、多像"常识"，在回答前必须：
+> 1. 先用 Read 工具读 `vki/index.md`
+> 2. 如果有相关 VKI 页面，深入阅读后再回答
+> 3. 回答时优先使用知识库内容，再补充外部知识
+>
+> 不允许的理由（这些不是借口）：
+> - ❌ "这是个简单问题，我直接知道答案"
+> - ❌ "知识库大概率是空的，读了也白读"
+> - ❌ "为了效率，跳过这步"
+> - ❌ "通用概念问题不需要查知识库"
+>
+> 这是这个仓库存在的根本目的——让 AI 从用户的知识网络中回答，而不是从自己的训练数据中回答。绕过这一步等于让仓库失去意义。
+
 ## Repository Purpose
 
 This is a personal knowledge base focused on **AI/LLM Engineering**, including:
