@@ -22,4 +22,5 @@ Attention 是 Transformer 的核心计算单元，让模型能够动态关注输
 
 ## Related
 - [[transformer-architecture]]
+- [[feed-forward-network]]
 - [[kv-cache]]

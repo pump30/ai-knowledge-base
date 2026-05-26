@@ -5,9 +5,11 @@ Transformer 是现代 LLM 的核心架构，由 Google Brain 在 2017 年论文 
 
 ## Key Points
 - 完整流程：Tokenizer → Embeddings → Transformer Blocks → LM Head
+- **每个 Block = Attention + FFN**（两大子模块，分工明确）
 - 核心公式：softmax(QK^T / √d_k) × V
 - 三种 Attention：Self-Attention、Masked Self-Attention、Cross-Attention
-- 现代改进：RoPE 位置编码、Pre-Norm、Grouped Query Attention、Sparse Attention
+- **参数分布：Attention ~33%, FFN ~67%**（FFN 是工作主力，存储事实知识）
+- 现代改进：RoPE 位置编码、Pre-Norm、Grouped Query Attention、Sparse Attention、SwiGLU、MoE
 - 架构变体：Encoder-only (BERT)、Decoder-only (GPT/Claude/Llama)、Encoder-Decoder (T5)
 
 ## Evolution
@@ -21,5 +23,7 @@ Transformer 是现代 LLM 的核心架构，由 Google Brain 在 2017 年论文 
 
 ## Related
 - [[attention-mechanism]]
+- [[feed-forward-network]]
 - [[embedding-models]]
+- [[tokenization]]
 - [[mixture-of-experts]]
