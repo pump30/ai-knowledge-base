@@ -134,6 +134,59 @@ description: 从 URL 或本地文件自动摄入知识到 AI 知识库。支持 
 
 5. **交叉引用**：确保新页面与已有页面用 `[[page-name]]` 互相链接
 
+### Phase 6: Open PR（提交并发起 Pull Request）
+
+执行顺序：**Phase 6 在 Phase 5 之前**，这样 Phase 5 的报告可以包含 PR URL。
+
+1. **只 add 本次产物**：对 Phase 3 写入的 source 文件和 Phase 4 创建/更新的 VKI 文件，逐个 `git add <path>`。**禁止** `git add -A` 或 `git add .`，避免误提交无关文件。
+2. **Commit**（用 HEREDOC，不要用 `--amend`）：
+
+   ```bash
+   git commit -m "$(cat <<'EOF'
+   Ingest: <source title>
+
+   Source: <URL or local path>
+   - New: vki/concepts/xxx.md, vki/entities/yyy.md
+   - Updated: vki/concepts/zzz.md
+   EOF
+   )"
+   ```
+
+   - 第一行 ≤ 70 字符；超出则截断 `<source title>`。
+   - `New:` 或 `Updated:` 行为空时省略该行。
+
+3. **推送分支**：`git push -u origin <branch-name>`。失败 → 保留本地 commit，向用户报告 stderr。
+
+4. **创建 PR**（push 成功后）：
+
+   ```bash
+   gh pr create --base main --head <branch-name> \
+     --title "Ingest: <source title>" \
+     --body "$(cat <<'EOF'
+   Source: <URL or local path>
+
+   ## VKI changes
+   - New: vki/concepts/xxx.md, vki/entities/yyy.md
+   - Updated: vki/concepts/zzz.md
+
+   ## Notes
+   <Phase 5 报告中的 observations，无则省略整段>
+   EOF
+   )"
+   ```
+
+5. **捕获 PR URL**：从 `gh pr create` 的 stdout 取最后一行（即 PR URL）。
+
+6. **不 merge**：用户手动 merge。Skill 永不调用 `gh pr merge` 或 `git merge`。
+
+### Phase 6 失败处理
+
+| 情况 | 行为 |
+|------|------|
+| `git add` 后无 staged 改动 | 跳过 commit 和 PR，Phase 5 报告写"无新内容可发布" |
+| `git push` 失败（认证/网络） | 保留本地 commit 和分支；Phase 5 写 push 失败信息（见下） |
+| `gh pr create` 失败 | 远端分支已存在；Phase 5 输出 compare URL 让用户手动开 PR |
+
 ### Phase 5: 输出报告
 
 完成后输出摘要：
