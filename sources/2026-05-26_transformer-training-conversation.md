@@ -202,3 +202,40 @@ GPT/Claude 的训练方式：
 2. **预测下一个词 = 被迫理解世界** — 这是 LLM 涌现智能的根本原理
 3. **Decoder-only 赢在训练效率** — 6-7 倍效率差距决定了架构演进方向
 4. **数据问题正在成为瓶颈** — 高质量数据有限，合成数据是未来方向
+
+---
+
+## 6. Tokenizer 是训练出来的还是预定义的？
+
+**答案：词表是训练出来的，但训练算法是人设计的。** 三层区分：
+
+| 层级 | 例子 | 谁决定 |
+|------|------|--------|
+| 算法 | BPE/WordPiece/SentencePiece/Unigram | 人设计 |
+| 超参数 | 词表大小、特殊 token | 人配置 |
+| 词表内容 | 具体哪些 subword 进词表 | **训练出来的** |
+
+### Tokenizer 训练 ≠ 模型训练
+两个独立训练过程：
+- Tokenizer 训练（几小时）：语料 → vocab.json + merges.txt
+- 模型训练（几个月）：用切好的 token IDs 训练权重
+Tokenizer 训完后冻结。
+
+### BPE 训练流程
+```
+初始: 词表 = 所有单字符
+迭代: 找最高频相邻字符对 → 合并为新 token
+重复: 直到达到目标词表大小
+```
+
+### 主流模型 Tokenizer
+- GPT-4: BPE (cl100k_base), 100K
+- Llama 3: TikToken (BPE), 128K（从 Llama 2 的 32K 扩展，为更好编码非英语和代码）
+- BERT: WordPiece, 30K
+- Claude: 类似 BPE（未公开），~100K
+
+### 关键洞察
+- Tokenizer 是模型的"输入语言"，决定能看到什么粒度
+- 换 tokenizer = 换模型（embedding 全失效）
+- 中文/CJK 用 SentencePiece 直接在字节上训练，无需预分词
+- Glitch Tokens 现象：词表中"误收纳"的训练不充分 token 会让模型行为异常

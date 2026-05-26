@@ -4,12 +4,15 @@
 
 ---
 
-## Concepts (15)
+## Concepts (18)
 
 | Page | Description | Sources | Updated |
 |------|-------------|---------|---------|
-| [[transformer-architecture]] | Transformer 核心架构：Self-Attention、Q/K/V、现代改进 | 3篇 | 2026-05-24 |
-| [[attention-mechanism]] | Attention 机制：Self/Masked/Cross、Multi-Head、GQA | 2篇 | 2026-05-24 |
+| [[transformer-architecture]] | Transformer 核心架构：Self-Attention、Q/K/V、现代改进 | 3篇 | 2026-05-26 |
+| [[attention-mechanism]] | Attention 机制：Self/Masked/Cross、Multi-Head、GQA | 2篇 | 2026-05-26 |
+| [[feed-forward-network]] | FFN：Transformer 知识存储主力，占 67% 参数 | 3篇 | 2026-05-26 |
+| [[mixture-of-experts]] | MoE：拆 FFN 为多专家，激活 top-k，GPT-4/Mixtral 核心 | 2篇 | 2026-05-26 |
+| [[tokenization]] | 分词：BPE/WordPiece/SentencePiece，词表训练 vs 算法设计 | 2篇 | 2026-05-26 |
 | [[training-loop]] | 训练循环：Forward/Loss/Backward/Optimizer + Pretrain/SFT/RLHF | 2篇 | 2026-05-26 |
 | [[next-token-prediction]] | 自回归训练：Decoder-only 模型的核心训练范式 | 4篇 | 2026-05-26 |
 | [[masked-language-modeling]] | MLM 训练方式：BERT 的双向遮盖预测 | 4篇 | 2026-05-26 |
@@ -78,6 +81,6 @@
 
 ---
 
-*Last health check: 2026-05-26 (added training-related concepts)*
-*Total VKI pages: 25*
+*Last health check: 2026-05-26 (added FFN, MoE concepts; fixed broken link)*
+*Total VKI pages: 28*
 *Total sources: 19*
