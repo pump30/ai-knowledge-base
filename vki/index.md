@@ -78,9 +78,10 @@
 | claude-code-agentic-coding-assistant | Claude Code 自主编程助手 | 2026-01-14 |
 | agent-skills-anthropic | Anthropic Agent Skills | 2026-01-15 |
 | 2026-05-26_transformer-training-conversation | Transformer 训练原理对话 | 2026-05-26 |
+| 2026-05-26_claude-pptx-precision-editing-tutorial | Claude PPT 精准编辑教程（小红书视频笔记） | 2026-05-26 |
 
 ---
 
 *Last health check: 2026-05-26 (added FFN, MoE concepts; fixed broken link)*
 *Total VKI pages: 28*
-*Total sources: 19*
+*Total sources: 20*
