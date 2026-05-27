@@ -8,10 +8,6 @@
 
 ## 第一课: 课程介绍 (Introduction)
 
-![课程大纲](screenshots/01_course_outline.jpg)
-
-![课程概述](screenshots/01_intro_overview.jpg)
-
 ### 核心要点
 
 LLM 最初被设计为为人类生成文本，但现在一些 LLM 已经被训练为可以输出**格式化数据**（如 JSON），从而使 LLM 能够决定何时调用其他代码作为子程序。
@@ -25,14 +21,6 @@ LLM 最初被设计为为人类生成文本，但现在一些 LLM 已经被训�
 ---
 
 ## 第二课: OpenAI Function Calling
-
-![函数定义](screenshots/02_function_definition.jpg)
-
-![函数调用模式](screenshots/02_function_call_modes.jpg)
-
-![函数响应](screenshots/02_function_response.jpg)
-
-![结果回传](screenshots/02_function_result_passback.jpg)
 
 ### 核心概念
 
@@ -75,12 +63,6 @@ OpenAI 对最新模型进行了微调，使其能够接受一个额外的 `funct
 
 ## 第三课: LangChain 表达式语言 (LCEL)
 
-![LCEL 接口](screenshots/03_lcel_interface.jpg)
-
-![LCEL 优势](screenshots/03_lcel_benefits.jpg)
-
-![简单链](screenshots/03_simple_chain.jpg)
-
 ### 核心概念
 
 LCEL 是 LangChain 中的新语法，通过 **Runnable 协议** 定义了统一的组件接口。
@@ -122,10 +104,6 @@ result = chain.invoke({"topic": "bears"})
 ---
 
 ## 第四课: 在 LangChain 中使用 OpenAI Function Calling
-
-![Pydantic 类定义](screenshots/04_pydantic_class.jpg)
-
-![转换为 OpenAI 函数](screenshots/04_convert_pydantic.jpg)
 
 ### 核心概念
 
@@ -175,10 +153,6 @@ chain = prompt | model_with_function
 ---
 
 ## 第五课: 标签与数据提取 (Tagging and Extraction)
-
-![标签流程图](screenshots/05_tagging_diagram.jpg)
-
-![提取流程图](screenshots/05_extraction_diagram.jpg)
 
 ### 核心概念
 
@@ -234,10 +208,6 @@ class Information(BaseModel):
 ---
 
 ## 第六课: 工具与路由 (Tools and Routing)
-
-![路由概念](screenshots/06_routing_concept.jpg)
-
-![工具组成](screenshots/06_tool_components.jpg)
 
 ### 核心概念
 
@@ -312,12 +282,6 @@ chain = prompt | model | OpenAIFunctionsAgentOutputParser() | route
 ---
 
 ## 第七课: 对话代理 (Conversational Agent)
-
-![代理概述](screenshots/07_agent_overview.jpg)
-
-![代理循环](screenshots/07_agent_loop.jpg)
-
-![聊天界面](screenshots/07_chatbot_ui.jpg)
 
 ### 核心概念
 

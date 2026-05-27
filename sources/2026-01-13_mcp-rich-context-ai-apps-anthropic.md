@@ -28,9 +28,6 @@
 
 > **生动比喻**：MCP 就像 USB 接口——在 USB 出现前，每种设备都有自己独特的接口；有了 USB，"一次构建，到处使用"。MCP 是 AI 世界的"USB 标准"。
 
-![MCP 概览](screenshots/01_mcp_overview.jpg)
-![研究 Agent 示例](screenshots/01_research_agent_example.jpg)
-
 ---
 
 ## 第2课：为什么需要 MCP
@@ -58,9 +55,6 @@
 - 用自然语言：读取 GitHub issue -> 自动在 Asana 创建并分配任务
 
 > **生动比喻**：没有 MCP 之前，让 AI 连接不同数据源就像给每个电器都配一个专用转接头；有了 MCP，就像所有电器都用标准插座——即插即用。
-
-![MCP 生态系统](screenshots/02_mcp_ecosystem.jpg)
-![标准化](screenshots/02_standardization.jpg)
 
 ---
 
@@ -120,11 +114,6 @@ def summarize_data(topic: str) -> list[Message]:
 
 > **生动比喻**：三大原语就像餐厅服务——Tools 是"点菜"（主动发起请求改变状态），Resources 是"自助沙拉台"（数据摆在那里你随时取），Prompts 是"推荐套餐"（厨师帮你搭配好，不用自己研究菜单）。
 
-![客户端-服务器架构](screenshots/03_client_server_architecture.jpg)
-![原语](screenshots/03_primitives.jpg)
-![SDK 代码示例](screenshots/03_sdk_code_example.jpg)
-![传输通信](screenshots/03_transport_communication.jpg)
-
 ---
 
 ## 第4课：Chatbot 示例
@@ -133,8 +122,6 @@ def summarize_data(topic: str) -> list[Message]:
 - 使用 Anthropic API 的 tool_use 功能
 - 工具定义包含：name、description、input_schema
 - LLM 决定何时调用工具，返回结构化工具调用请求
-
-![工具定义](screenshots/04_tool_definition.jpg)
 
 ---
 
@@ -151,9 +138,6 @@ def summarize_data(topic: str) -> list[Message]:
 3. 用 `@mcp.resource()` 装饰器定义资源
 4. 启动服务器，用 Inspector 测试
 
-![FastMCP 服务器](screenshots/05_fastmcp_server.jpg)
-![Inspector](screenshots/05_inspector.jpg)
-
 ---
 
 ## 第6课：创建 MCP Client
@@ -163,9 +147,6 @@ def summarize_data(topic: str) -> list[Message]:
 - 发现可用工具并转换为 LLM tool schema
 - 处理 LLM 的工具调用请求，转发给 Server 执行
 - 将结果返回 LLM 继续对话
-
-![Client 连接](screenshots/06_client_connection.jpg)
-![Chatbot 运行](screenshots/06_chatbot_running.jpg)
 
 ---
 
@@ -188,9 +169,6 @@ def summarize_data(topic: str) -> list[Message]:
 }
 ```
 
-![JSON 配置](screenshots/07_json_config.jpg)
-![参考服务器](screenshots/07_reference_servers.jpg)
-
 ---
 
 ## 第8课：添加 Prompt 和 Resource 功能
@@ -204,8 +182,6 @@ def summarize_data(topic: str) -> list[Message]:
 - 服务器提供预定义的高质量 prompt
 - 用户只需填入动态数据
 - 减轻用户 prompt engineering 负担
-
-![Resources 和 Prompts](screenshots/08_resources_prompts.jpg)
 
 ---
 
@@ -221,9 +197,6 @@ def summarize_data(topic: str) -> list[Message]:
 - Cursor、Windsurf、VS Code
 - 其他社区开发的 MCP 兼容应用
 
-![Claude Desktop 配置](screenshots/09_claude_desktop_config.jpg)
-![MCP 客户端列表](screenshots/09_mcp_clients_list.jpg)
-
 ---
 
 ## 第10课：创建和部署远程服务器
@@ -236,9 +209,6 @@ def summarize_data(topic: str) -> list[Message]:
 ### 与本地服务器的区别
 - 本地：StdIO transport，Client 启动 Server 子进程
 - 远程：HTTP transport，Server 独立运行，Client 连接 URL
-
-![远程部署](screenshots/10_remote_deploy.jpg)
-![SSE Transport](screenshots/10_sse_transport.jpg)
 
 ---
 
@@ -277,9 +247,6 @@ Agent（同时是 MCP Client + Server）
 ```
 
 > **生动比喻**：MCP 的 Sampling 就像老板（Client）派助理（Server）去调查问题，助理可以自己请教专家（反向调用 LLM）后再汇报结果，而不是把所有原始资料都搬回老板桌上。
-
-![多 Agent 架构](screenshots/11_multi_agent_architecture.jpg)
-![注册与发现](screenshots/11_registry_discovery.jpg)
 
 ---
 

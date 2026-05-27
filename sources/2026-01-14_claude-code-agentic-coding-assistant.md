@@ -24,8 +24,6 @@
 2. **Jupyter Notebook**：电商数据分析、仪表盘创建
 3. **Figma 设计稿**：通过 MCP Server 导入设计并构建前端
 
-![课程概览](screenshots/01_course_overview.jpg)
-
 ---
 
 ## 第2课：什么是 Claude Code
@@ -69,11 +67,6 @@
 
 > **生动比喻**：Claude Code 就像一个极其聪明的新同事——你不需要把整个代码库打印给他看，只需要告诉他去哪里找文件（工具），他会自己翻阅、理解、然后动手改代码。CLAUDE.md 就是你给他的"入职手册"。
 
-![Agentic 架构](screenshots/02_agentic_architecture.jpg)
-![工具列表](screenshots/02_tools_list.jpg)
-![CLAUDE.md 记忆](screenshots/02_claude_md_memory.jpg)
-![MCP 服务器](screenshots/02_mcp_servers.jpg)
-
 ---
 
 ## 第4课：环境搭建与代码库理解
@@ -91,9 +84,6 @@
 - 使用 `/init` 命令自动生成 CLAUDE.md
 - 让 Claude 绘制架构图，验证理解是否正确
 
-![CLAUDE.md 类型](screenshots/04_claude_md_types.jpg)
-![代码库图示](screenshots/04_codebase_diagram.jpg)
-
 ---
 
 ## 第5课：添加功能
@@ -110,9 +100,6 @@
 
 > **生动比喻**：Plan 模式就像让建筑师先画图纸再施工——避免"边建边拆"的浪费。Playwright 集成则让 Claude 自己当"验收员"，不用你来回切换浏览器检查。
 
-![Plan 模式](screenshots/05_plan_mode.jpg)
-![MCP Playwright](screenshots/05_mcp_playwright.jpg)
-
 ---
 
 ## 第6课：测试、错误调试与代码重构
@@ -127,9 +114,6 @@
 - 对于复杂重构任务，Claude 可以启动**子代理**
 - 子代理处理特定子任务，主代理协调整体
 - 降低单次上下文负担，提高质量
-
-![测试工作流](screenshots/06_testing_workflow.jpg)
-![子代理重构](screenshots/06_subagent_refactor.jpg)
 
 ---
 
@@ -155,9 +139,6 @@ main
 
 > **生动比喻**：Git Worktrees + 多实例 Claude 就像一个建筑工地有多个工队同时施工——水电队、装修队、外墙队各干各的，互不干扰，最后合并验收。
 
-![Git Worktrees](screenshots/07_git_worktrees.jpg)
-![自定义命令](screenshots/07_custom_commands.jpg)
-
 ---
 
 ## 第8课：GitHub 集成与 Hooks
@@ -171,9 +152,6 @@ main
 - 在特定事件触发时自动执行操作
 - 配置在 `settings.json` 中
 - 示例：提交前自动运行 lint、测试完成后通知
-
-![GitHub 集成](screenshots/08_github_integration.jpg)
-![Hooks](screenshots/08_hooks.jpg)
 
 ---
 
@@ -189,9 +167,6 @@ main
 - Claude 自动生成 Streamlit 应用
 - 交互式可视化
 
-![Notebook 重构](screenshots/09_notebook_refactor.jpg)
-![Streamlit 仪表盘](screenshots/09_streamlit_dashboard.jpg)
-
 ---
 
 ## 第10课：基于 Figma 设计稿创建 Web 应用
@@ -206,9 +181,6 @@ main
 2. Claude Code 生成 HTML/CSS/JS
 3. Playwright MCP 截图验证
 4. 迭代修正直到匹配设计
-
-![Figma 到应用](screenshots/10_figma_to_app.jpg)
-![最终仪表盘](screenshots/10_final_dashboard.jpg)
 
 ---
 

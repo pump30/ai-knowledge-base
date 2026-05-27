@@ -11,15 +11,11 @@
 - 2017 年论文 "Attention is All You Need" 提出了 Transformer 架构
 - **关键优势**：可以**并行训练**，大幅提升计算速度（RNN 必须顺序处理，无法并行）
 
-![Transformer 编码器-解码器结构](screenshots/03_encoder_decoder_blocks.jpg)
-
 **Transformer 由堆叠的 Encoder（编码器）和 Decoder（解码器）块组成**，每个块内部都包含注意力机制。通过堆叠多层，模型的表达能力逐层增强。
 
 ---
 
 ## 2. Encoder（编码器）详解
-
-![编码器内部结构](screenshots/04_encoder_detail.jpg)
 
 编码器的处理流程：
 
@@ -37,8 +33,6 @@
 ---
 
 ## 3. Decoder（解码器）详解
-
-![解码器内部结构](screenshots/08_masked_self_attention.jpg)
 
 解码器的处理流程：
 
@@ -59,8 +53,6 @@
 ## 4. 两大主流架构
 
 ### 4.1 表示模型（Representation Models）—— BERT
-
-![BERT 架构](screenshots/09_bert_architecture.jpg)
 
 **BERT** = Bidirectional Encoder Representations from Transformers（2018）
 
@@ -84,8 +76,6 @@
 
 ### 4.2 生成模型（Generative Models）—— GPT
 
-![GPT 解码器架构](screenshots/12_gpt_decoder_only.jpg)
-
 **GPT** = Generative Pre-Trained Transformer
 
 - **Decoder-only 架构**：只用解码器，不用编码器
@@ -96,8 +86,6 @@
 
 ## 5. Context Length（上下文长度）
 
-![上下文长度示意](screenshots/13_context_length.jpg)
-
 - **上下文长度** = 当前正在处理的 token 总数（输入 + 已生成的 token）
 - 模型有**最大上下文长度**限制（如 GPT-1 的限制是 512 tokens）
 - 生成的 token 也会占用上下文空间，逐渐消耗可用长度
@@ -105,8 +93,6 @@
 ---
 
 ## 6. 模型规模的增长
-
-![参数规模](screenshots/14_model_scale.jpg)
 
 | 模型 | 参数量 |
 |------|--------|
@@ -119,8 +105,6 @@
 ---
 
 ## 7. 生成式 AI 的爆发
-
-![生成式 AI 时代](screenshots/15_generative_ai_year.jpg)
 
 - **2023 年**：被称为"生成式 AI 之年"
 - 始于 ChatGPT（GPT-3.5）的发布

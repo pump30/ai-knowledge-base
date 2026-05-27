@@ -24,9 +24,6 @@
 ### 生动比喻
 > 嵌入向量就像给每个词/句子分配一个**GPS坐标**——意思相近的词/句子在"语义地图"上距离很近，意思不同的则相距很远。
 
-![课程概览](screenshots/01_course_overview.jpg)
-![Word2Vec历史](screenshots/01_word2vec_history.jpg)
-
 ---
 
 ## 第2课：Introduction to Embedding Models（嵌入模型概述）
@@ -56,10 +53,6 @@
 
 ### 生动比喻
 > Cross Encoder就像**一对一面试**——准确但慢，每个候选人都要和面试官坐下来谈半小时。Sentence Embedding就像**简历筛选**——先看简历关键词（预计算向量），快速筛出TOP候选人，虽不如面试精准但效率极高。
-
-![Word2Vec类比运算](screenshots/02_word2vec_analogy.jpg)
-![RAG Pipeline](screenshots/02_rag_pipeline.jpg)
-![Cross Encoder vs Bi-Encoder](screenshots/02_cross_encoder_vs_biencoder.jpg)
 
 ---
 
@@ -99,10 +92,6 @@
 ### 生动比喻
 > Word2Vec就像**字典**——查"苹果"永远是同一个解释。BERT就像**有语境感知的翻译官**——同样是"苹果"，在"吃苹果"和"苹果手机"中给出完全不同的理解。MLM训练就像**完形填空**——通过大量做"填空题"，模型学会了根据上下文理解每个词。
 
-![Transformer架构](screenshots/03_transformer_architecture.jpg)
-![BERT模型](screenshots/03_bert_model.jpg)
-![BERT MLM训练](screenshots/03_bert_mlm.jpg)
-
 ---
 
 ## 第4课：Token vs. Sentence Embedding（Token嵌入 vs 句子嵌入）
@@ -138,9 +127,6 @@
 >
 > Dual Encoder就像培训两个**专业配对员**——一个专门理解问题（"你想找什么？"），另一个专门理解答案（"这个能满足你吗？"），两人配合远比单人做所有工作更有效。
 
-![BERT Token嵌入流程](screenshots/04_bert_token_embedding.jpg)
-![Dual Encoder架构](screenshots/04_dual_encoder_architecture.jpg)
-
 ---
 
 ## 第5课：Training a Dual Encoder（训练双编码器）
@@ -168,10 +154,6 @@
 
 ### 生动比喻
 > 对比损失训练就像**相亲配对**——把正确的couple（正样本）拉近，把错误配对（负样本）推远。而Batch内负样本就像**集体相亲**——一桌10对人，每个人和正确对象配对是正样本，和其他9个人的"误配"是负样本，一次训练搞定10个正样本和90个负样本。
-
-![对比损失](screenshots/05_contrastive_loss.jpg)
-![编码器架构](screenshots/05_encoder_architecture.jpg)
-![相似度矩阵](screenshots/05_similarity_matrix.jpg)
 
 ---
 
@@ -204,9 +186,6 @@
 ### 生动比喻
 > RAG中的Dual Encoder就像**图书馆管理系统**——入库时给每本书贴上"内容坐标"标签（Answer Encoder），读者找书时把需求也转换成坐标（Question Encoder），然后在坐标空间中找最近的那些书。ANN就像**图书馆的分区索引**——不用逐本翻找，先定位到相关区域再细找。
 
-![RAG中Dual Encoder的使用](screenshots/06_rag_dual_encoder_usage.jpg)
-![完整RAG Pipeline](screenshots/06_full_rag_pipeline.jpg)
-
 ---
 
 ## 第7课：Conclusion（结语）
@@ -228,9 +207,6 @@
 
 ### 生动比喻
 > 两阶段检索就像**选拔赛制**——初赛（Embedding快速筛选）淘汰大部分不相关文档，决赛（Cross Encoder精排）从候选者中选出最佳答案。这比让每个文档都参加"决赛"快得多。
-
-![两阶段检索](screenshots/07_two_stage_retrieval.jpg)
-![混合搜索](screenshots/07_hybrid_search.jpg)
 
 ---
 

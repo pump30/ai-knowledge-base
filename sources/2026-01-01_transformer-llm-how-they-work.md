@@ -33,8 +33,6 @@
 
 ### 核心问题：如何把文字变成计算机能处理的数字？
 
-![词袋模型的向量表示](screenshots/bow_vector.jpg)
-
 ### Bag-of-Words 工作原理
 
 1. **分词（Tokenization）**：把句子拆成单词
@@ -66,8 +64,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 **Word2Vec**（2013）是第一个成功捕获词义的方法。
 
-![Word2Vec 词嵌入空间](screenshots/word2vec_embeddings.jpg)
-
 ### Word2Vec 工作原理
 
 1. 给每个词分配一个**随机初始化的向量**（比如5个值）
@@ -78,8 +74,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 > **生动比喻**：想象你是一个新转学的学生。你不认识任何人，但你观察到：小明总和小红、小刚一起出现；小李总和小王、小赵一起出现。过了一段时间，你就知道小明和小红是同一类朋友圈的。Word2Vec 就是这样——通过观察词的"朋友圈"（上下文）来理解词义。
 
 ### 嵌入的性质
-
-![嵌入空间中的相似性](screenshots/embedding_similarity.jpg)
 
 - 每个维度可以理解为某种"属性"（如：动物性、复数性、新生性）
 - "cats"：动物性高，复数高，新生低
@@ -114,8 +108,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 ### Attention（注意力机制）登场（2014）
 
-![注意力机制示意](screenshots/attention_mechanism.jpg)
-
 **核心思想**：生成时，不只看一个压缩的向量，而是让模型**关注输入序列中所有位置**，并根据相关性分配权重。
 
 > **生动比喻**：想象你在翻译一本书。
@@ -145,8 +137,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 ### "Attention is All You Need"
 
-![Transformer 编码器-解码器结构](screenshots/03_encoder_decoder_blocks.jpg)
-
 **革命性创新**：完全抛弃 RNN，只用注意力机制。
 
 - 支持**并行训练**，大幅提速
@@ -154,16 +144,12 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 ### Encoder 内部
 
-![编码器内部结构](screenshots/04_encoder_detail.jpg)
-
 1. 输入 → 随机初始化 Embeddings
 2. **Self-Attention**：输入和自身比较，更新嵌入
 3. **Feed-forward Neural Network**：进一步处理
 4. 输出：**上下文化词嵌入**
 
 ### Decoder 内部
-
-![解码器完整结构](screenshots/08_masked_self_attention.jpg)
 
 1. 已生成的词 → **Masked Self-Attention**
 2. + Encoder 的输出 → **Encoder Attention**
@@ -182,8 +168,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 #### BERT（2018）— Encoder-only
 
-![BERT 架构](screenshots/09_bert_architecture.jpg)
-
 - 12 层 Transformer Encoder 堆叠
 - 输入前加 [CLS] token 代表整句
 - 训练方式：**Masked Language Modeling**（随机遮词，让模型猜）
@@ -191,23 +175,17 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 
 #### GPT — Decoder-only
 
-![GPT 架构](screenshots/12_gpt_decoder_only.jpg)
-
 - 只用 Decoder，不用 Encoder
 - 训练方式：预测下一个词
 - 用途：文本生成（ChatGPT、Claude 等）
 
 ### Context Length（上下文长度）
 
-![上下文长度](screenshots/13_context_length.jpg)
-
 - = 输入 prompt 的 token 数 + 已生成的 token 数
 - 模型有最大限制（如 GPT-1: 512, 现代模型: 128K+）
 - 生成的 token 也占用空间
 
 ### 模型规模
-
-![参数量增长](screenshots/14_model_scale.jpg)
 
 | 模型 | 参数量 | 年份 |
 |------|--------|------|
@@ -216,8 +194,6 @@ Bag-of-Words 的致命缺陷：它认为语言只是一堆词的集合，完全�
 | GPT-3 | 175B | 2020 |
 
 ### 生成式 AI 爆发
-
-![生成式 AI 时代](screenshots/15_generative_ai_year.jpg)
 
 2023 年被称为"生成式 AI 之年"，始于 ChatGPT，随后闭源和开源模型竞相涌现。
 
@@ -261,8 +237,6 @@ LLM 不能直接处理文字，需要先把文字切成**token**（可以是整�
 
 ### Transformer LLM 三大组件
 
-![三大组件](screenshots/transformer_3_components.jpg)
-
 ```
 输入文字 → [Tokenizer] → [Transformer Blocks 堆叠] → [Language Modeling Head] → 输出 token
 ```
@@ -272,8 +246,6 @@ LLM 不能直接处理文字，需要先把文字切成**token**（可以是整�
 3. **Language Modeling Head**：为词汇表中每个 token 打分，选出最可能的下一个 token
 
 ### Language Modeling Head
-
-![LM Head 评分](screenshots/lm_head_scoring.jpg)
 
 - 为每个候选 token 计算概率（所有概率之和 = 100%）
 - 概率最高的 token 成为输出
@@ -305,8 +277,6 @@ LLM 不能直接处理文字，需要先把文字切成**token**（可以是整�
 
 ### Transformer Block = Self-Attention + Feed-Forward Network
 
-![Transformer Block 两大组件](screenshots/transformer_block_components.jpg)
-
 ### Feed-Forward Neural Network 的直觉
 
 - 可以理解为模型的**"记忆存储"**
@@ -316,8 +286,6 @@ LLM 不能直接处理文字，需要先把文字切成**token**（可以是整�
 > **生动比喻**：Feed-Forward Network 像一本巨大的"常识百科"。它记住了"巴黎是法国首都"、"水在100度沸腾"这类知识。
 
 ### Self-Attention 的直觉
-
-![共指消解示例](screenshots/self_attn_coreference.jpg)
 
 - 让模型理解**代词指代关系**等上下文依赖
 - 例如 "The dog chased the llama because **it**..."——"it"指谁？
@@ -335,8 +303,6 @@ LLM 不能直接处理文字，需要先把文字切成**token**（可以是整�
 ## 第9课 Self-Attention 详解
 
 ### Query、Key、Value
-
-![QKV 矩阵和评分](screenshots/qkv_scoring.jpg)
 
 Self-Attention 使用三个投影矩阵：
 
@@ -361,8 +327,6 @@ Self-Attention 使用三个投影矩阵：
 
 ### Multi-Head Attention（多头注意力）
 
-![多头注意力](screenshots/multi_head_attention.jpg)
-
 - 同一层有**多个独立的注意力头**并行运算
 - 每个头有自己的 Q/K/V 矩阵
 - 不同的头可以关注不同类型的关系（语法、语义、位置等）
@@ -379,8 +343,6 @@ Self-Attention 使用三个投影矩阵：
 目的：减少计算量，加速推理。
 
 ### Sparse Attention（稀疏注意力）
-
-![稀疏注意力模式](screenshots/sparse_attention.jpg)
 
 - **Full Attention**：每个 token 关注所有前面的 token
 - **Sparse Attention**：部分层只关注最近的 N 个 token
@@ -469,13 +431,9 @@ pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_new_tok
 
 ### 核心思想
 
-![MoE 层结构](screenshots/moe_layer.jpg)
-
 把 FFN 层从**一个大网络**变成**多个小网络（专家）**，每次只激活其中少数几个。
 
 ### 两大组件
-
-![Router 路由机制](screenshots/moe_router.jpg)
 
 1. **Experts（专家）**：多个独立的 FFN 网络
 2. **Router（路由器）**：一个小分类器，决定每个 token 应该被哪个专家处理

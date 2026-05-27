@@ -20,8 +20,6 @@
 - 应用通常需要多个对用户不可见的内部步骤
 - 系统需要持续改进和评估
 
-![系统概览](screenshots/01_system_overview.jpg)
-
 ---
 
 ## 第2课：Language Models, the Chat Format and Tokens（语言模型、聊天格式与Token）
@@ -59,12 +57,6 @@
 ### 生动比喻
 > Token就像**乐高积木**——模型不是一个字母一个字母地看文字，而是把常见的字母组合拼成一块"积木"来处理。"lollipop"变成了三块积木"l|oll|ipop"，所以模型看不到中间具体有哪些字母。
 
-![Base vs Instruction-tuned](screenshots/02_base_vs_instruction.jpg)
-![Chat格式](screenshots/02_chat_format.jpg)
-![Token机制](screenshots/02_tokens.jpg)
-![监督学习](screenshots/02_supervised_learning.jpg)
-![Prompting vs 传统方法](screenshots/02_prompting_vs_traditional.jpg)
-
 ---
 
 ## 第3课：Classification（分类）
@@ -81,8 +73,6 @@
 
 ### 生动比喻
 > 分类就像医院的**分诊台**——患者进门先分诊，感冒去内科，骨折去骨科。不同类别的问题走不同的处理流程，而不是所有问题用同一套指令。
-
-![分类示例](screenshots/03_classification.jpg)
 
 ---
 
@@ -107,9 +97,6 @@
 ### 生动比喻
 > Moderation API就像餐厅的**安检门**——进门要查包（检查输入），出门也要查包（检查输出），确保没有违禁品进出。Prompt Injection就像有人试图**冒充工作人员混入后厨**，我们需要多重身份验证来阻止。
 
-![Moderation API](screenshots/04_moderation_api.jpg)
-![Prompt Injection防御](screenshots/04_prompt_injection.jpg)
-
 ---
 
 ## 第5课：Chain of Thought Reasoning（思维链推理）
@@ -132,8 +119,6 @@
 
 ### 生动比喻
 > Chain of Thought就像**数学考试要求写出解题步骤**——直接写答案容易出错，但一步步写出推导过程，最终答案的正确率大大提高。Inner Monologue就像**考官在心里打分**——学生看不到打分过程，只看到最终得分。
-
-![Chain of Thought](screenshots/05_chain_of_thought.jpg)
 
 ---
 
@@ -182,8 +167,6 @@
 ### 生动比喻
 > 输出检查就像文章发表前的**编辑审稿**——先让Moderation API做"政治正确检查"，再让模型做"事实核查"，双重保险确保用户看到的内容既安全又准确。
 
-![输出检查](screenshots/07_check_outputs.jpg)
-
 ---
 
 ## 第8课：Evaluation（端到端系统评估）
@@ -198,8 +181,6 @@
 
 ### 生动比喻
 > 端到端系统就像一家**高端餐厅的服务流程**——客人点菜（输入）-> 前台确认没有不合理要求（审核）-> 分配给对应厨师（分类）-> 厨师查食材库存（检索）-> 烹饪（生成）-> 品控试吃（输出检查）-> 上菜（展示）。
-
-![评估流程](screenshots/08_evaluation_process.jpg)
 
 ---
 
@@ -219,8 +200,6 @@
 ### 生动比喻
 > 评估LLM系统就像**餐厅质量管理**——先让主厨自己尝几道菜（手动检查），然后制定标准食谱对照（规则评估），再请美食评论家打分（LLM评估），最后上线后收集顾客评价（大规模评估）。
 
-![评估开发流程](screenshots/09_eval_development.jpg)
-
 ---
 
 ## 第10课：Evaluation Part II（评估方法二：无标准答案时）
@@ -235,8 +214,6 @@
 
 ### 生动比喻
 > 就像**作文考试**——没有唯一正确答案，但有评分标准。让一个"评委LLM"按照rubric给"选手LLM"的作文打分，虽然不完美，但比没有评估好得多。
-
-![Rubric评估](screenshots/10_rubric_eval.jpg)
 
 ---
 

@@ -12,15 +12,11 @@
 
 本课程教你如何通过**评估驱动开发 (Evaluation-Driven Development)** 来系统化地改进 AI Agent。课程围绕一个**数据分析 Agent** 展开,该 Agent 可以连接数据库、执行分析并生成可视化图表。
 
-![课程概览](screenshots/01_intro_agent_overview.jpg)
-
 **你将学到的核心能力:**
 - 为 Agent 添加**可观测性 (Observability)**,看到每一步的执行过程
 - 对 Agent 的各个组件进行**逐一评估**
 - 评估 Agent 的**执行路径 (Trajectory)** 是否高效
 - 将评估结构化为**实验 (Experiments)** 以系统化迭代
-
-![研究Agent示例](screenshots/01_intro_research_agent.jpg)
 
 > **生动比喻**: 评估驱动开发就像给赛车装上仪表盘 -- 你不再是"蒙眼开车随意调整",而是看着速度表、油温表、胎压表来精确调校每一个部件。
 
@@ -32,8 +28,6 @@
 
 #### 两层评估体系
 
-![两层评估](screenshots/02_eval_two_layers.jpg)
-
 | 评估层次 | 关注点 | 典型基准 |
 |---------|--------|---------|
 | **模型评估 (Model Eval)** | LLM 本身在特定任务上的表现 | MMLU, HumanEval |
@@ -44,8 +38,6 @@
 > **生动比喻**: 传统软件测试像**火车在轨道上运行** -- 起点终点明确,检查轨道和车厢是否正常即可。LLM 系统测试像**在繁忙城市里开车** -- 环境多变,系统非确定性,同一个输入可能得到不同输出。
 
 #### Agent 带来的额外复杂性
-
-![Agent三大组件](screenshots/02_agent_components.jpg)
 
 Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 
@@ -66,8 +58,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 
 #### Agent 的三大组件
 
-![Agent结构图](screenshots/03_agent_structure.jpg)
-
 1. **路由器 (Router)** -- Agent 的"大脑",决定调用哪个技能
    - 可以是 LLM + Function Calling(灵活但不稳定)
    - 也可以是 NLP 分类器或规则代码(稳定但能力有限)
@@ -82,8 +72,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
    - 历史执行步骤日志
 
 #### 课程示例 Agent: 数据分析助手
-
-![示例Agent](screenshots/03_example_agent.jpg)
 
 该 Agent 包含三个工具:
 - **Lookup Sales Data**: 生成SQL -> 执行SQL -> 返回结果
@@ -119,8 +107,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 
 #### 可观测性的基本构建块
 
-![Traces和Spans](screenshots/05_traces_spans.jpg)
-
 | 概念 | 定义 | 类比 |
 |------|------|------|
 | **Trace** | 应用的一次完整运行(从输入到输出) | 一段完整的旅程 |
@@ -128,8 +114,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 | **OpenTelemetry** | 应用可观测性的标准框架 | 通用的"监控语言" |
 
 #### Phoenix UI 中的追踪视图
-
-![Phoenix追踪视图](screenshots/05_phoenix_trace.jpg)
 
 **Span 类型与颜色:**
 - 橙色: LLM 调用
@@ -170,8 +154,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 
 #### 三种评估技术
 
-![三种评估类型](screenshots/07_three_eval_types.jpg)
-
 | 技术 | 适用场景 | 准确度 | 可扩展性 |
 |------|---------|--------|---------|
 | **代码评估** | 格式检查、正则匹配、Ground Truth对比 | 100% | 高 |
@@ -179,8 +161,6 @@ Agent = **推理 (Reasoning)** + **路由 (Routing)** + **行动 (Action)**
 | **人工标注** | 任何场景(最灵活) | 100% | 低 |
 
 #### LLM-as-Judge 工作流程
-
-![LLM作为评判者](screenshots/07_llm_as_judge.jpg)
 
 1. 获取应用的输入/输出
 2. 构造评估 Prompt
@@ -245,8 +225,6 @@ def code_is_runnable(generated_code):
 
 #### 什么是轨迹 (Trajectory)?
 
-![轨迹示意图](screenshots/09_trajectory.jpg)
-
 轨迹 = Agent 为响应查询而经过的**路由 -> 工具 -> 路由 -> ... -> 用户**的完整路径。
 
 #### 为什么轨迹很重要?
@@ -257,8 +235,6 @@ def code_is_runnable(generated_code):
 - 更少的步骤 = 更少的变量 = 更高可靠性
 
 #### 收敛性评分 (Convergence Score)
-
-![收敛性评分](screenshots/09_convergence.jpg)
 
 **计算方法:**
 1. 对一组相似查询运行 Agent
@@ -304,8 +280,6 @@ def evaluate_path_length(output):
 
 #### 评估驱动开发 (Evaluation-Driven Development)
 
-![评估驱动开发](screenshots/11_eval_driven_dev.jpg)
-
 **四步循环:**
 1. **策划测试数据集** -- 代表性 > 穷举性,1-2个示例/类型即可
 2. **运行实验** -- 改变模型/prompt/逻辑,产生不同版本
@@ -313,8 +287,6 @@ def evaluate_path_length(output):
 4. **比较与迭代** -- Apple-to-Apple 对比,选择最优版本
 
 #### 实验仪表盘
-
-![实验仪表盘](screenshots/11_experiment_dashboard.jpg)
 
 理想状态: 每一行是 Agent 的一次运行,每一列是一个评估指标,形成全景视图。
 
@@ -393,8 +365,6 @@ run_experiment(
 ## 第14课: 监控生产环境中的 Agent (Monitoring Agents)
 
 ### 核心要点
-
-![生产监控](screenshots/14_production_monitoring.jpg)
 
 #### 从开发到生产的四步曲
 

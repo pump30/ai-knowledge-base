@@ -25,9 +25,6 @@
 
 > **生动比喻**：Agent 工作流就像三个人合写论文——一人列提纲，一人做调研，一人写初稿，然后互相审阅修改，反复迭代直到满意。这比让一个人一口气写完要好得多。
 
-![Agent 示例](screenshots/01_agent_examples.jpg)
-![Agentic 设计模式](screenshots/01_agentic_design_patterns.jpg)
-
 ---
 
 ## 第2课：从零构建 Agent
@@ -61,8 +58,6 @@ class Agent:
 - 设置 `max_turns` 防止无限循环
 
 > **生动比喻**：ReAct Agent 像一个不断"自问自答"的侦探——先想"我需要什么线索"，然后去调查（调用工具），看到结果后再想"下一步该做什么"，直到破案。
-
-![ReAct 模式](screenshots/02_react_pattern.jpg)
 
 ---
 
@@ -101,9 +96,6 @@ class AgentState(TypedDict):
 
 > **生动比喻**：LangGraph 就像一个地铁线路图——节点是站点（执行任务的地方），边是轨道（固定路线），条件边是换乘站（根据情况决定去哪条线）。
 
-![Agent 图结构](screenshots/03_agent_graph_structure.jpg)
-![LangGraph 概念](screenshots/03_langgraph_concepts.jpg)
-
 ---
 
 ## 第4课：Agentic 搜索工具
@@ -124,9 +116,6 @@ class AgentState(TypedDict):
 4. **评分过滤**：去除不相关信息，返回精炼结果
 
 > **生动比喻**：传统搜索像给你一堆书让你自己翻；Agentic 搜索像一个助手帮你查完资料后直接告诉你答案和出处。
-
-![Agentic 搜索流程](screenshots/04_agentic_search_flow.jpg)
-![搜索工具实现](screenshots/04_search_tool_implementation.jpg)
 
 ---
 
@@ -151,8 +140,6 @@ Thread 2: "哪个更暖?" -> 困惑（新thread无历史）
 ```
 
 > **生动比喻**：Checkpointer 就像游戏存档——你可以随时存档、读档、甚至回到之前的存档重新来过。Thread ID 则像不同玩家的存档槽位。
-
-![Checkpointer 概念](screenshots/05_checkpointer_concept.jpg)
 
 ---
 
@@ -180,8 +167,6 @@ Thread 2: "哪个更暖?" -> 困惑（新thread无历史）
 - `update_state(config, values, as_node="action")`：以某节点身份注入结果
 
 > **生动比喻**：Human in the Loop 就像自动驾驶中的人类接管——系统自动运行，但在关键决策点人类可以审批、修改方向、甚至"倒车"回到之前的路口重新选择。
-
-![状态记忆](screenshots/06_state_memory.jpg)
 
 ---
 
@@ -213,8 +198,6 @@ class AgentState(TypedDict):
 
 > **生动比喻**：Essay Writer 就像一个写作工作坊——先列提纲（Plan），然后查资料（Research），写初稿（Generate），请人评审（Reflect），再补充资料重写，直到满意为止。
 
-![Essay Writer 流程](screenshots/07_essay_writer_flow.jpg)
-
 ---
 
 ## 第8课：LangChain 生态资源
@@ -240,9 +223,6 @@ class AgentState(TypedDict):
 | **Language Agent Tree Search** | 树搜索 + 反思 + 回溯 | 需要探索多条路径 |
 
 > **生动比喻**：Flow Engineering 就像建筑师设计水管系统——大部分管道方向固定（pipeline），但在关键节点设置了循环泵（迭代改进），确保整体系统高效可控。
-
-![Flow Engineering](screenshots/09_flow_engineering.jpg)
-![多 Agent 架构](screenshots/09_multi_agent_architecture.jpg)
 
 ---
 

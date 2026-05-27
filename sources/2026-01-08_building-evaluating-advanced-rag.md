@@ -8,8 +8,6 @@
 
 ## 第一课: 课程介绍 (Introduction)
 
-![课程概览](screenshots/01_course_overview.jpg)
-
 ### 核心要点
 
 RAG (检索增强生成) 已成为让 LLM 基于用户自有数据回答问题的关键方法。但要构建**生产级别**的高质量 RAG 系统，需要:
@@ -26,8 +24,6 @@ RAG (检索增强生成) 已成为让 LLM 基于用户自有数据回答问题�
 
 ### RAG 三元组评估指标
 
-![RAG三元组介绍](screenshots/01_rag_triad_intro.jpg)
-
 - **上下文相关性 (Context Relevance)** - 检索到的文本块与用户问题的相关程度
 - **基础性 (Groundedness)** - 回答是否有检索到的上下文支撑
 - **答案相关性 (Answer Relevance)** - 最终回答与用户问题的相关程度
@@ -37,8 +33,6 @@ RAG (检索增强生成) 已成为让 LLM 基于用户自有数据回答问题�
 ---
 
 ## 第二课: 高级 RAG 流水线 (Advanced RAG Pipeline)
-
-![基本RAG流水线](screenshots/02_rag_pipeline.jpg)
 
 ### 基本 RAG 流水线的三个阶段
 
@@ -62,8 +56,6 @@ RAG (检索增强生成) 已成为让 LLM 基于用户自有数据回答问题�
 
 ### 评估基准设置
 
-![RAG三元组指标](screenshots/02_rag_triad_metrics.jpg)
-
 使用 TruLens 定义评估指标，建立基准线 (baseline)，然后对比高级技术的改进效果:
 
 ```python
@@ -75,15 +67,11 @@ groundedness        # 回答是否基于检索到的上下文
 
 ### 句子窗口检索概述
 
-![句子窗口检索概念](screenshots/02_sentence_window_concept.jpg)
-
 **工作原理**: 嵌入和检索单个句子（更细粒度的块），但检索后用原始句子周围的更大窗口替换，为 LLM 提供更多上下文。
 
 > **生动比喻**: 就像在一本书中用荧光笔标记了最关键的一句话，但读的时候会把这句话前后几段一起读，这样才能真正理解上下文。
 
 ### 自动合并检索概述
-
-![自动合并检索概念](screenshots/02_auto_merging_concept.jpg)
 
 **工作原理**: 构建父节点-子节点层级结构。如果一个父节点的大多数子节点都被检索到，就用父节点替换这些子节点。
 
@@ -106,8 +94,6 @@ groundedness        # 回答是否基于检索到的上下文
 
 ### 1. 答案相关性 (Answer Relevance)
 
-![答案相关性](screenshots/03_answer_relevance.jpg)
-
 **定义**: 检查最终回答是否与用户提出的查询相关。
 
 **结构**:
@@ -122,8 +108,6 @@ f_qa_relevance = Feedback(openai.relevance_with_cot_reasons, name="Answer Releva
 ```
 
 ### 2. 上下文相关性 (Context Relevance)
-
-![上下文相关性](screenshots/03_context_relevance.jpg)
 
 **定义**: 评估检索步骤的质量 -- 给定查询，每段检索到的上下文与问题的相关程度。
 
@@ -156,8 +140,6 @@ f_groundedness = Feedback(openai.groundedness_measure_with_cot_reasons, name="Gr
 
 ### 评估与迭代工作流
 
-![迭代工作流](screenshots/03_iteration_workflow.jpg)
-
 ```
 基本 RAG → 评估(RAG三元组) → 发现失败模式 → 
     → 高级 RAG(句子窗口) → 重新评估 → 
@@ -182,8 +164,6 @@ f_groundedness = Feedback(openai.groundedness_measure_with_cot_reasons, name="Gr
 ---
 
 ## 第四课: 句子窗口检索深入 (Sentence-window Retrieval)
-
-![句子窗口检索原理图](screenshots/04_sentence_window_diagram.jpg)
 
 ### 核心问题与解决方案
 
@@ -215,8 +195,6 @@ node_parser = SentenceWindowNodeParser.from_defaults(
 
 #### 3. 重排序器 (Sentence Transformer Re-rank)
 
-![重排序器](screenshots/04_reranker.jpg)
-
 ```python
 rerank = SentenceTransformerRerank(
     top_n=2,                # 最终保留前2个
@@ -229,8 +207,6 @@ rerank = SentenceTransformerRerank(
 > **生动比喻**: 重排序器就像一个严格的面试官 -- 初选放宽标准让更多候选人进来，然后面试官仔细挑选最匹配的人。
 
 ### 窗口大小实验结果
-
-![窗口大小权衡](screenshots/04_window_size_tradeoff.jpg)
 
 | 窗口大小 | Context Relevance | Groundedness | Answer Relevance | 成本 |
 |----------|-------------------|--------------|------------------|------|
@@ -251,8 +227,6 @@ rerank = SentenceTransformerRerank(
 
 ## 第五课: 自动合并检索深入 (Auto-merging Retrieval)
 
-![自动合并检索原理图](screenshots/05_auto_merging_diagram.jpg)
-
 ### 核心问题与解决方案
 
 **问题**: 标准 RAG 检索到的多个文本块可能来自同一区域但顺序混乱、碎片化，这会阻碍 LLM 的合成能力。
@@ -262,8 +236,6 @@ rerank = SentenceTransformerRerank(
 2. 检索时，如果子节点被检索的比例超过阈值，自动合并为父节点
 
 ### 层级节点解析器 (HierarchicalNodeParser)
-
-![层级节点结构](screenshots/05_hierarchy_nodes.jpg)
 
 ```python
 node_parser = HierarchicalNodeParser.from_defaults(
@@ -328,8 +300,6 @@ automerging_retriever = AutoMergingRetriever(
 
 ### 句子窗口 vs 自动合并的互补性
 
-![互补技术](screenshots/05_complementary_techniques.jpg)
-
 两种技术是**互补的**，而非替代关系:
 
 - **句子窗口**: 适合扩展**连续**文本的上下文
@@ -340,8 +310,6 @@ automerging_retriever = AutoMergingRetriever(
 ---
 
 ## 第六课: 总结与下一步 (Conclusion)
-
-![总结](screenshots/06_conclusion.jpg)
 
 ### 课程总结
 

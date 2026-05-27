@@ -12,15 +12,11 @@
 
 Skills (技能) 是**指令文件夹**,用于扩展你的代理(Agent)的能力,为其注入专业知识。
 
-![技能结构概览](screenshots/01_skill_structure.jpg)
-
 **关键要点:**
 - Skills 是一种**开放标准** (Open Standard),可跨多个平台使用(Claude Code、Codex、Gemini CLI 等)
 - 每个 Skill 必须包含一个 `SKILL.md` 文件,其中有技能的名称、描述和主要指令
 - Skills 采用**渐进式披露** (Progressive Disclosure):名称和描述始终在上下文窗口中,其余内容仅在触发时加载
 - 代理需要基本工具:文件系统访问(读写文件)+ Bash 工具(执行代码)
-
-![渐进式披露与MCP结合](screenshots/01_progressive_disclosure.jpg)
 
 ### 生动比喻
 
@@ -38,8 +34,6 @@ Skills (技能) 是**指令文件夹**,用于扩展你的代理(Agent)的能力,
 
 **解决方案**: 将重复性工作流打包成 Skill。
 
-![SKILL.md 文件结构](screenshots/03_skill_md_file.jpg)
-
 ### SKILL.md 文件结构
 
 ```yaml
@@ -54,8 +48,6 @@ description: 执行每周营销活动绩效分析...
 - 不使用保留关键词 (如 claude, anthropic)
 - SKILL.md 放在文件夹顶层
 - 引用文件放在 `references/` 子文件夹
-
-![文件夹结构](screenshots/03_folder_structure.jpg)
 
 ### Skill 文件夹结构示例
 
@@ -82,8 +74,6 @@ Skills 已经成为跨平台的开放标准,支持:
 - Claude Code, Claude AI, Claude Desktop
 - Codex, Gemini CLI, Open Code 等
 
-![Agent演进](screenshots/04_agent_evolution.jpg)
-
 ### Agent 架构的演进
 
 | 阶段 | 特点 | 问题 |
@@ -100,8 +90,6 @@ Skills 已经成为跨平台的开放标准,支持:
 
 ### 渐进式披露 (Progressive Disclosure)
 
-![渐进式披露流程图](screenshots/04_progressive_disclosure_diagram.jpg)
-
 > **核心理念**: 上下文窗口是"公共资源" (Public Good),加入越多数据,token 消耗越快,回答质量可能下降。
 
 **三层加载机制:**
@@ -114,8 +102,6 @@ Skills 已经成为跨平台的开放标准,支持:
 ## 第五课: Skills vs Tools, MCP 和 Subagents
 
 ### 生态系统全景
-
-![Skills vs MCP 对比](screenshots/05_skills_vs_mcp.jpg)
 
 ### 类比: 建书架
 
@@ -136,8 +122,6 @@ Skills 已经成为跨平台的开放标准,支持:
 - 主代理作为协调器 (Orchestrator)
 - 子代理拥有隔离的上下文窗口 + 细粒度权限
 - 每个子代理可以使用特定的 Skills
-
-![Customer Insight Analyzer](screenshots/05_customer_insight_analyzer.jpg)
 
 ### 总结对比
 
@@ -185,8 +169,6 @@ Skills 已经成为跨平台的开放标准,支持:
 ## 第七课: 创建自定义Skills (Creating Custom Skills)
 
 ### 最佳实践总结
-
-![最佳实践](screenshots/07_best_practices.jpg)
 
 #### 命名与描述
 
@@ -239,8 +221,6 @@ my-skill/
 
 ### 核心概念: Code Execution Tool + Files API
 
-![Code Execution Tool](screenshots/08_code_execution_tool.jpg)
-
 **不同环境的差异:**
 
 | 环境 | 文件系统 | 代码执行 | 联网 |
@@ -289,8 +269,6 @@ client.files.download(file_id, betas=[...])
 ## 第九课: Skills 与 Claude Code
 
 ### Claude Code 中的 Skills 配置
-
-![Claude Code Skills 设置](screenshots/09_claude_code_skills.jpg)
 
 **Skills 存放位置:**
 ```
@@ -346,8 +324,6 @@ skills: [reviewing-cli-command]
 
 ### 构建研究代理
 
-![Agent SDK 架构](screenshots/10_agent_sdk_architecture.jpg)
-
 **架构设计:**
 - 主代理 (Orchestrator): 协调研究并合成结果
 - 子代理 1: Documentation Researcher (WebSearch + WebFetch)
@@ -368,8 +344,6 @@ skills: [reviewing-cli-command]
 - Level 4: Where to Go Next
 
 ### Agent SDK 代码实现
-
-![Agent SDK 代码](screenshots/10_agent_sdk_code.jpg)
 
 ```python
 from claude_agent_sdk import Agent, AgentDefinition

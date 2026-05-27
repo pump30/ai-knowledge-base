@@ -36,8 +36,6 @@
 
 ### 五大设计模式
 
-![Agent 设计模式](screenshots/01_agentic_design_patterns.jpg)
-
 | 设计模式 | 说明 | 比喻 |
 |---------|------|------|
 | **Planning（规划）** | 思考要采取的步骤 | 写论文前先列大纲 |
@@ -47,8 +45,6 @@
 | **Memory（记忆）** | 跟踪多步骤的进度和结果 | 记住之前做了什么决策 |
 
 ### Agent 示例架构
-
-![Agent 架构示例](screenshots/01_agent_examples.jpg)
 
 课程展示了三种 Agent 架构：
 - **ReAct** (Reasoning + Acting) - 早期范式
@@ -62,8 +58,6 @@
 ## Lesson 2: 从零构建 Agent {#lesson-2}
 
 ### ReAct 模式详解
-
-![ReAct 模式](screenshots/02_react_pattern.jpg)
 
 **ReAct = Reasoning + Acting**
 
@@ -82,8 +76,6 @@ Agent 类的核心设计：
 3. **执行方法（Execute）**: 调用 LLM 获取响应
 
 ### 自动化循环
-
-![Agent 循环](screenshots/02_agent_loop.jpg)
 
 关键代码逻辑：
 - 用**正则表达式**解析 LLM 的输出，判断是"Action"还是"Answer"
@@ -104,8 +96,6 @@ Agent 类的核心设计：
 
 ### LangGraph 三大核心概念
 
-![LangGraph 核心概念](screenshots/03_langgraph_concepts.jpg)
-
 | 概念 | 说明 | 比喻 |
 |------|------|------|
 | **Nodes（节点）** | Agent 或函数，执行具体操作 | 流水线上的工位 |
@@ -113,8 +103,6 @@ Agent 类的核心设计：
 | **Conditional Edges（条件边）** | 根据条件决定下一步走向 | 流水线上的分拣器 |
 
 ### Agent State（智能体状态）
-
-![Agent State](screenshots/03_agent_state.jpg)
 
 Agent State 是 LangGraph 最重要的概念之一：
 - 在图的所有节点和边中都可以访问
@@ -149,8 +137,6 @@ class AgentState(TypedDict):
 
 ### 传统搜索 vs Agentic Search
 
-![Agentic Search 流程](screenshots/04_agentic_search_flow.jpg)
-
 | 对比维度 | 传统搜索 | Agentic Search |
 |---------|---------|----------------|
 | **返回内容** | 链接列表 | 结构化答案 + 来源 |
@@ -159,8 +145,6 @@ class AgentState(TypedDict):
 | **处理复杂查询** | 需要人工分步 | 自动分解子问题 |
 
 ### Agentic Search 内部工作原理
-
-![搜索工具内部结构](screenshots/04_search_tool_internals.jpg)
 
 Tavily 搜索工具的工作步骤：
 1. **理解问题** - 将复杂查询分解为子问题
@@ -184,8 +168,6 @@ Tavily 搜索工具的工作步骤：
 
 ### 持久化（Persistence）
 
-![Checkpointer 概念](screenshots/05_checkpointer.jpg)
-
 **为什么需要持久化？**
 - 长时间运行的 Agent 需要保存中间状态
 - 支持多会话（多用户）并行
@@ -208,8 +190,6 @@ thread_config = {"configurable": {"thread_id": "1"}}
 
 ### 流式输出（Streaming）
 
-![Streaming 概念](screenshots/05_streaming.jpg)
-
 两种流式输出模式：
 
 | 模式 | 说明 | 使用方法 |
@@ -225,8 +205,6 @@ Token 流需要使用异步版本（`AsyncSqliteSaver`），通过过滤 `on_cha
 
 ### 核心机制：interrupt_before
 
-![Interrupt Before](screenshots/06_interrupt_before.jpg)
-
 通过在编译图时设置 `interrupt_before`，可以在执行特定节点前暂停：
 
 ```python
@@ -236,8 +214,6 @@ graph.compile(checkpointer=memory, interrupt_before=["action"])
 > **生动比喻**: 这就像一个需要上级审批的流程 - Agent 准备好了要执行某个操作，但在真正执行前先"举手"等人类确认。人类可以说"继续"、"修改后继续"或"不要做了"。
 
 ### 状态快照与时间旅行
-
-![State Memory](screenshots/06_state_memory.jpg)
 
 **状态管理命令**：
 
@@ -266,8 +242,6 @@ graph.update_state(config, state_update, as_node="action")
 ## Lesson 7: Essay Writer 多 Agent 实战项目 {#lesson-7}
 
 ### 整体架构
-
-![Essay Writer 流程](screenshots/07_essay_writer_flow.jpg)
 
 这是一个完整的**多 Agent 协作系统**，包含以下步骤：
 
@@ -301,8 +275,6 @@ class AgentState(TypedDict):
 | **Research Critique** | 根据批评意见做补充研究 | 补充研究员 |
 
 ### 图可视化
-
-![Essay Writer 图](screenshots/07_essay_graph_viz.jpg)
 
 ### 关键设计细节
 
@@ -340,16 +312,12 @@ class AgentState(TypedDict):
 
 ### 多 Agent 架构
 
-![多 Agent 架构](screenshots/09_multi_agent.jpg)
-
 | 架构 | 特点 | 适用场景 |
 |------|------|---------|
 | **Multi-Agent（多智能体）** | 多个 Agent 共享同一状态 | 协作完成复杂任务 |
 | **Supervisor（监督者）** | 一个主 Agent 协调子 Agent | 需要智能路由和规划 |
 
 ### Flow Engineering（流程工程）
-
-![Flow Engineering](screenshots/09_flow_engineering.jpg)
 
 来自 AlphaCodium 论文的概念：
 - 大部分是**有向管道**（Pipeline）

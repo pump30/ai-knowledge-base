@@ -20,10 +20,6 @@
 
 > **生动比喻**：HNSW 搜索就像邮递包裹——顶层先找到目标所在的"省"，下一层找到"城市"，越往下越精确，直到找到确切地址。
 
-![RAG 概览](screenshots/01_rag_overview.jpg)
-![HNSW 介绍](screenshots/01_hnsw_intro.jpg)
-![量化类型](screenshots/01_quantization_types.jpg)
-
 ---
 
 ## 第2课：嵌入模型（Embedding Models）
@@ -48,10 +44,6 @@
 - 模型有最大 token 数限制（如 256），超出部分会被截断
 
 > **生动比喻**：输入嵌入就像字典中每个词的基础含义，而输出嵌入则像这个词在具体句子中的"活用含义"——"苹果"在科技文章和水果店里意思完全不同。
-
-![嵌入管道](screenshots/02_embedding_pipeline.jpg)
-![分词过程](screenshots/02_tokenization_process.jpg)
-![Transformer 架构](screenshots/02_transformer_arch.jpg)
 
 ---
 
@@ -86,10 +78,6 @@
 
 > **生动比喻**：BPE 像是拼乐高——从单块开始不断组合热门搭配；Unigram 像是雕刻大理石——从整块开始逐步削去不重要的部分。
 
-![BPE 过程](screenshots/03_bpe_process.jpg)
-![WordPiece 过程](screenshots/03_wordpiece_process.jpg)
-![Unigram 过程](screenshots/03_unigram_process.jpg)
-
 ---
 
 ## 第4课：分词的实际影响
@@ -118,9 +106,6 @@ query: "适合冬天穿的衣服，40美元以下"
 ```
 
 > **生动比喻**：语义搜索像是一个理解自然语言的图书管理员，但他分不清数字大小——你说"找便宜的书"他能理解，但"100元以下"需要另一个系统来精确筛选。
-
-![Emoji 问题](screenshots/04_emoji_problem.jpg)
-![相似度热力图](screenshots/04_similarity_heatmap.jpg)
 
 ---
 
@@ -151,9 +136,6 @@ query: "适合冬天穿的衣服，40美元以下"
 
 > **生动比喻**：Precision 像"你给我的10本书里有几本是我想要的"；Recall 像"我想要的所有书中你给了我几本"；MRR 像"我翻了几页才找到第一本有用的"。
 
-![DCG 公式](screenshots/05_dcg_formula.jpg)
-![度量概览](screenshots/05_metrics_overview.jpg)
-
 ---
 
 ## 第6课：优化 HNSW 搜索
@@ -180,9 +162,6 @@ query: "适合冬天穿的衣服，40美元以下"
 - 好处：可分布式部署、并发处理、单段重建
 
 > **生动比喻**：HNSW 参数调优就像调望远镜——M 像镜片直径（越大越清晰但越重），ef 像对焦精度（越高越准但越慢）。搜索结果只能与你的"望远镜品质"（嵌入模型）一样好。
-
-![HNSW 层级](screenshots/06_hnsw_layers.jpg)
-![HNSW 搜索过程](screenshots/06_hnsw_search_process.jpg)
 
 ---
 
@@ -223,10 +202,6 @@ query: "适合冬天穿的衣服，40美元以下"
 - 乘积量化在高压缩率下精度下降明显
 
 > **生动比喻**：量化就像地图的不同比例——标量量化是 1:10000 的城市地图（细节足够）；乘积量化是 1:100000 的省级地图（大方向对但细节丢失）；二值量化是只标"东南西北"的草图（极度简化但极快）。
-
-![标量量化](screenshots/07_scalar_quantization.jpg)
-![乘积量化](screenshots/07_product_quantization.jpg)
-![二值量化](screenshots/07_binary_quantization.jpg)
 
 ---
 

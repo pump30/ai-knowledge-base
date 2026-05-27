@@ -19,9 +19,6 @@
 - 使用指令微调LLM时，想象你在给一个聪明但不了解你任务细节的人下达指令
 - 两大提示词原则预告：清晰具体 + 给模型思考时间
 
-![Base LLM vs Instruction-tuned LLM](screenshots/01_base_vs_instruction_llm.jpg)
-![RLHF训练流程](screenshots/01_rlhf_training.jpg)
-
 ---
 
 ## 第2课：Guidelines（提示词准则）
@@ -58,11 +55,6 @@
 >
 > 给模型思考时间就像**考试时给学生草稿纸**——不给草稿纸直接写答案，出错概率大增。
 
-![使用分隔符示例](screenshots/02_delimiters_example.jpg)
-![原则1：清晰具体](screenshots/02_principle1_clear_specific.jpg)
-![原则2：给模型思考时间](screenshots/02_principle2_time_to_think.jpg)
-![幻觉问题](screenshots/02_hallucination.jpg)
-
 ---
 
 ## 第3课：Iterative Prompt Development（迭代提示词开发）
@@ -87,8 +79,6 @@
 ### 生动比喻
 > 迭代提示词就像**雕刻一座塑像**——你不会期望第一刀就完美，而是先勾出大形，再一刀一刀精雕细琢。
 
-![迭代开发流程](screenshots/03_iterative_process.jpg)
-
 ---
 
 ## 第4课：Summarizing（文本摘要）
@@ -104,8 +94,6 @@
 
 ### 生动比喻
 > LLM摘要就像一个**超快的秘书**——你扔给他100页报告，他能在几秒内告诉你每一页的核心要点，而且还能根据你是CEO还是物流经理，调整汇报重点。
-
-![摘要演示](screenshots/04_summarizing_demo.jpg)
 
 ---
 
@@ -128,9 +116,6 @@
 
 ### 生动比喻
 > 传统NLP就像**为每道菜专门买一个锅**，而LLM就像一口**万能锅**——煎炸蒸煮炖全能，只需换个调料（提示词）。
-
-![推断概览](screenshots/05_inferring_overview.jpg)
-![主题提取](screenshots/05_topic_extraction.jpg)
 
 ---
 
@@ -162,9 +147,6 @@
 ### 生动比喻
 > LLM做文本转换就像一个**精通百国语言的翻译官**，同时还兼任**排版师、校对员和文体改写专家**——以前需要一整个团队干的活，现在几行提示词搞定。
 
-![转换任务概览](screenshots/06_transforming_tasks.jpg)
-![翻译演示](screenshots/06_translation_demo.jpg)
-
 ---
 
 ## 第7课：Expanding（文本扩展）
@@ -185,8 +167,6 @@
 
 ### 生动比喻
 > Temperature就像**调节音乐播放器的"随机播放"强度**——设为0就是严格按顺序播放（可预测），设为0.7就是半随机（有惊喜），设为1就是完全随机（可能跳到意想不到的歌）。
-
-![Temperature示意图](screenshots/07_temperature_diagram.jpg)
 
 ---
 
@@ -209,9 +189,6 @@
 
 ### 生动比喻
 > System Message就像**导演给演员的角色说明书**——观众（用户）看不到，但它决定了演员（模型）如何表演。而Context就像**演员的台词本**——每次演出都要从第一页开始念，不带上之前的对话就会"忘词"。
-
-![Chat格式说明](screenshots/08_chat_format.jpg)
-![OrderBot演示](screenshots/08_orderbot_demo.jpg)
 
 ---
 

@@ -10,8 +10,6 @@
 
 本课程系统讲解了如何使用 crewAI 开源框架构建多 AI Agent 系统。核心学习内容包括：角色扮演(Role-Playing)、工具使用(Tool Use)、记忆(Memory)、护栏(Guardrails)和协作(Collaboration)。通过多个实战项目（文章撰写、客户支持、销售外展、活动策划、金融分析、简历定制），逐步深入掌握多智能体系统的设计与实现。
 
-![课程核心构建模块](screenshots/01_building_blocks.jpg)
-
 ---
 
 ## 第1课: 课程介绍
@@ -28,8 +26,6 @@ Andrew Ng 和 Joao Moura 共同介绍了课程背景。
 ---
 
 ## 第2课: 概述 - 什么是 Agentic Automation
-
-![Agentic Automation 对比传统自动化](screenshots/02_agentic_automation.jpg)
 
 **传统自动化 vs. Agentic 自动化**:
 - 传统: 从 A 到 B 写死逻辑，边缘情况越多代码越复杂（if-else 地狱）
@@ -48,13 +44,9 @@ Andrew Ng 和 Joao Moura 共同介绍了课程背景。
 - 旧方式: 表单 -> 规则引擎(公司大小?地区?) -> 固定评分
 - Agent方式: 表单 -> AI研究(搜索互联网) -> 智能比较 -> 动态评分 -> 生成谈话要点
 
-![简历定制示例](screenshots/02_resume_example.jpg)
-
 ---
 
 ## 第3课: AI Agents 是什么
-
-![Agent 核心组件：LLM + 工具](screenshots/03_agent_with_tools.jpg)
 
 **Agent 的诞生过程**:
 1. LLM 预测下一个 token
@@ -68,8 +60,6 @@ Andrew Ng 和 Joao Moura 共同介绍了课程背景。
 - 每个 Agent 专注做一件事并做好（专家分工）
 - 不同 Agent 可使用不同 LLM（Llama-3做研究，GPT-4做写作）
 - 可使用自定义微调模型驱动特定 Agent
-
-![crewAI 框架概览](screenshots/03_crewai_framework.jpg)
 
 **crewAI 框架特点**:
 - 简单的结构化概念（Agent, Task, Crew）
@@ -113,8 +103,6 @@ result = crew.kickoff(inputs={"topic": "Artificial Intelligence"})
 
 ## 第5课: AI Agent 的六大关键要素
 
-![六大要素](screenshots/05_six_elements.jpg)
-
 ### 1. 角色扮演 (Role Playing)
 - 设置精确的 role/goal/backstory 直接影响输出质量
 - 使用专业关键词（如 "FINRA approved" 而非简单 "financial analyst"）
@@ -143,8 +131,6 @@ result = crew.kickoff(inputs={"topic": "Artificial Intelligence"})
 - crewAI 框架级别内置
 
 ### 6. 记忆 (Memory)
-
-![记忆类型](screenshots/05_memory_types.jpg)
 
 | 记忆类型 | 生命周期 | 作用 |
 |---------|---------|------|
@@ -178,8 +164,6 @@ result = crew.kickoff(inputs={"topic": "Artificial Intelligence"})
 
 ## 第7课: Agent 创建的心智框架
 
-![经理人思维框架](screenshots/07_manager_framework.jpg)
-
 **核心框架——像经理人一样思考**:
 
 1. **明确目标**: 你试图完成什么？
@@ -199,8 +183,6 @@ result = crew.kickoff(inputs={"topic": "Artificial Intelligence"})
 ---
 
 ## 第8课: 工具的三大关键特质
-
-![工具三大品质](screenshots/08_tool_qualities.jpg)
 
 ### 1. 多功能性 (Versatile)
 - 能处理 LLM 传来的各种输入格式
@@ -254,8 +236,6 @@ class SentimentAnalysisTool(BaseTool):
 ---
 
 ## 第11课: 定义良好任务的关键要素
-
-![任务核心要素](screenshots/11_task_elements.jpg)
 
 **任务创建的两个必须**:
 1. **清晰的描述** (Description): 你期望 Agent 做什么
@@ -320,8 +300,6 @@ class VenueDetails(BaseModel):
 
 ## 第14-15课: 多 Agent 协作与金融分析
 
-![协作流程](screenshots/14_collaboration_processes.jpg)
-
 ### 协作方式对比
 
 | 方式 | 特点 | 适用场景 |
@@ -329,8 +307,6 @@ class VenueDetails(BaseModel):
 | 顺序执行 (Sequential) | 任务依次传递，上下文逐渐衰减 | 流水线式工作 |
 | 层级执行 (Hierarchical) | Manager Agent 统一调度 | 复杂决策场景 |
 | 并行执行 (Parallel) | 独立任务同时运行 | 互不依赖的子任务 |
-
-![层级流程](screenshots/14_hierarchical_process.jpg)
 
 ### 层级执行 (Hierarchical Process)
 

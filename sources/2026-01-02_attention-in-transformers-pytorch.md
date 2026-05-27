@@ -16,8 +16,6 @@
 
 ### 注意力机制的历史
 
-![编码器-解码器历史](screenshots/01_encoder_decoder_history.jpg)
-
 **2014年**：Yoshua Bengio（蒙特利尔大学）和 Chris Manning（斯坦福大学）的团队独立提出了注意力机制，用于机器翻译任务。
 
 **核心问题**：翻译时，不同语言的词序不同，句子长度也不同。例如：
@@ -30,8 +28,6 @@
 - Decoder 利用这些向量生成输出，并通过**注意力权重**决定关注输入的哪个部分
 
 ### "Attention is All You Need"（2017）
-
-![Attention is All You Need 论文](screenshots/01_attention_is_all_you_need.jpg)
 
 - 来自 Google Brain 团队的开创性论文
 - 引入了 Transformer 架构和更通用的注意力形式
@@ -47,8 +43,6 @@
 
 ### 课程大纲
 
-![课程大纲](screenshots/01_course_outline.jpg)
-
 1. Transformer 和 Attention 的核心思想
 2. Self-Attention 的矩阵数学和代码
 3. Self-Attention vs Masked Self-Attention
@@ -60,8 +54,6 @@
 ## 第2课 The Main Ideas Behind Transformers and Attention（Transformer 和注意力的核心思想）
 
 ### Transformer 的三大基础构件
-
-![Transformer 三大组件](screenshots/02_transformer_three_parts.jpg)
 
 | 组件 | 功能 | 作用 |
 |------|------|------|
@@ -75,8 +67,6 @@
 > - **Attention** = 读到代词"他"时，回头看看前文谁最可能是"他"
 
 ### Self-Attention（自注意力）的直觉
-
-![Self-Attention 相似度计算](screenshots/02_self_attention_similarity.jpg)
 
 **示例句子**："The pizza came out of the oven and it tasted good"
 
@@ -93,15 +83,11 @@
 
 ### Self-Attention 方程
 
-![Self-Attention 方程](screenshots/03_self_attention_equation.jpg)
-
 $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 看起来复杂，但可以拆成几个简单步骤。
 
 ### Query、Key、Value 的来源
-
-![QKV 矩阵计算](screenshots/03_qkv_matrices.jpg)
 
 **数据库类比**：
 
@@ -142,8 +128,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
 
 **第四步：对每行取 Softmax**
 
-![Softmax 百分比结果](screenshots/03_softmax_percentages.jpg)
-
 - 每行加和等于1（转化为百分比）
 - 表示每个词对其他词的"关注程度"
 - 例如："write" 对自己的关注度36%，对 "a" 的关注度40%，对 "poem" 的关注度24%
@@ -161,8 +145,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
 ## 第4课 Coding Self-Attention in PyTorch（PyTorch 实现 Self-Attention）
 
 ### 完整代码结构
-
-![Self-Attention 类代码](screenshots/04_self_attention_class.jpg)
 
 ```python
 import torch
@@ -227,8 +209,6 @@ class SelfAttention(nn.Module):
 
 ### Self-Attention 创建上下文感知嵌入
 
-![上下文感知嵌入](screenshots/05_context_aware_embeddings.jpg)
-
 **普通词嵌入**：只聚类单个词（"great" 和 "awesome" 靠近）
 
 **上下文感知嵌入**（Context-Aware Embeddings）：
@@ -237,8 +217,6 @@ class SelfAttention(nn.Module):
 - 同一个词在不同上下文中得到不同的嵌入
 
 ### 核心区别
-
-![Self-Attention vs Masked Self-Attention](screenshots/05_self_vs_masked.jpg)
 
 | 特性 | Self-Attention | Masked Self-Attention |
 |------|---------------|----------------------|
@@ -276,8 +254,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\ri
 
 ### 掩码矩阵的构造
 
-![掩码矩阵](screenshots/06_mask_matrix.jpg)
-
 以 "Write a poem" 为例，掩码规则：
 - "Write"（第1个词）：只能看自己 → 遮住 "a" 和 "poem"
 - "A"（第2个词）：能看自己和 "write" → 遮住 "poem"
@@ -295,8 +271,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\ri
 
 ### Softmax 后的效果
 
-![Masked Softmax 结果](screenshots/06_masked_softmax_result.jpg)
-
 - "Write" 对自己的注意力 = 100%，对其他词 = 0%
 - "A" 对 "poem" 的注意力 = 0%
 - "Poem" 对所有词都有正常的注意力分配
@@ -313,8 +287,6 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}} + M\ri
 ## 第7课 Coding Masked Self-Attention in PyTorch（PyTorch 实现 Masked Self-Attention）
 
 ### 代码结构
-
-![Masked Self-Attention 类](screenshots/07_masked_attention_class.jpg)
 
 ```python
 class MaskedSelfAttention(nn.Module):
@@ -365,8 +337,6 @@ mask = (mask == 0)               # 0变True（需遮挡），1变False（保留�
 
 ### 三种 Transformer 架构的来龙去脉
 
-![Encoder-Decoder 架构](screenshots/08_encoder_decoder_architecture.jpg)
-
 **历史脉络**：
 
 1. **最初的 Transformer**（2017）：同时有 Encoder 和 Decoder
@@ -390,8 +360,6 @@ mask = (mask == 0)               # 0变True（需遮挡），1变False（保留�
 
 ### 应用场景
 
-![Cross-Attention 在多模态中的应用](screenshots/08_cross_attention.jpg)
-
 - **经典用途**：机器翻译（英语→西班牙语）
 - **现代用途**：多模态模型
   - 图像/音频 Encoder → 生成上下文感知嵌入
@@ -409,8 +377,6 @@ mask = (mask == 0)               # 0变True（需遮挡），1变False（保留�
 
 ### 为什么需要多个注意力头？
 
-![Multi-Head Attention 概念](screenshots/09_multi_head_attention.jpg)
-
 - 简单句子中，单个注意力头足够
 - 复杂句子/长段落中，词与词之间存在**多种类型的关系**
 - 多个注意力头可以**同时、独立**地捕获不同类型的关系
@@ -422,8 +388,6 @@ mask = (mask == 0)               # 0变True（需遮挡），1变False（保留�
 - 原始 Transformer 论文使用 **8个 Head**
 
 ### 输出维度问题
-
-![Multi-Head 全连接层](screenshots/09_multi_head_fc_layer.jpg)
 
 问题：多个 Head 的输出拼接后维度变大（如 3个Head × 2个值 = 6个值）
 
@@ -484,8 +448,6 @@ class Attention(nn.Module):
 | Encoder-Decoder Attention | `attention(decoder_out, encoder_out, encoder_out)` — Q 来自 Decoder，K/V 来自 Encoder |
 
 ### Multi-Head Attention 类
-
-![Multi-Head Attention 类代码](screenshots/10_multi_head_class.jpg)
 
 ```python
 class MultiHeadAttention(nn.Module):

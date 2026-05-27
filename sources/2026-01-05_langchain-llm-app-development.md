@@ -14,8 +14,6 @@
 - 但实际应用往往需要**多次调用 LLM**并**解析输出**，存在大量"胶水代码"
 - **LangChain** 由 Harrison Chase 创建，是一个开源框架，极大简化了 LLM 应用的开发流程
 
-![LangChain 框架概述](screenshots/01_langchain_overview.jpg)
-
 ### LangChain 的两大核心价值
 
 | 价值 | 说明 |
@@ -24,8 +22,6 @@
 | 端到端用例（Chains） | 将模块化组件串联为完整应用，快速上手 |
 
 ### 课程涵盖内容
-
-![课程主题概览](screenshots/01_course_topics.jpg)
 
 1. **Models（模型）**：语言模型的抽象封装
 2. **Prompts（提示）**：引导模型完成有用任务的输入设计
@@ -44,8 +40,6 @@
 - **Models**：LLM 的封装（如 ChatOpenAI）
 - **Prompts**：构造传入模型的输入
 - **Parsers**：将模型的文本输出解析为结构化格式（如 Python 字典）
-
-![Prompt Template 代码示例](screenshots/02_prompt_template.jpg)
 
 ### 为什么需要 Prompt Template？
 
@@ -70,8 +64,6 @@ prompt_template = ChatPromptTemplate.from_template(template_string)
 > **生动比喻**：Prompt Template 就像一份合同模板——你只需要填入客户名称和金额（变量），不需要每次都重新写整份合同。
 
 ### Output Parser（输出解析器）
-
-![输出解析与 ReAct 框架](screenshots/02_output_parser.jpg)
 
 **问题**：LLM 返回的是字符串，即使看起来像 JSON，也无法直接当字典用。
 
@@ -107,11 +99,7 @@ Prompt 指令 + Parser 解析 = 完美的输入输出抽象
 
 LLM 本身是**无状态的**（stateless）——每次 API 调用都是独立的。聊天机器人看起来"有记忆"，只是因为代码把历史对话作为上下文传给了 LLM。
 
-![ConversationBufferMemory 示例](screenshots/03_memory_buffer.jpg)
-
 ### LangChain 提供的记忆类型
-
-![多种记忆类型](screenshots/03_memory_types.jpg)
 
 | 记忆类型 | 工作方式 | 适用场景 |
 |----------|----------|----------|
@@ -178,15 +166,11 @@ chain.run("queen size sheet set")  # 输出: "Royal Beddings"
 
 #### 2. SimpleSequentialChain（简单顺序链）
 
-![简单顺序链示意图](screenshots/04_simple_sequential_chain.jpg)
-
 - 每个子链只有**一个输入**和**一个输出**
 - 前一个链的输出自动作为下一个链的输入
 - 像流水线一样顺序执行
 
 #### 3. SequentialChain（顺序链）
-
-![顺序链示意图](screenshots/04_sequential_chain.jpg)
 
 - 支持**多个输入**和**多个输出**
 - 每一步可以接收来自之前任何步骤的变量
@@ -200,8 +184,6 @@ chain.run("queen size sheet set")  # 输出: "Royal Beddings"
 ```
 
 #### 4. Router Chain（路由链）
-
-![路由链概念](screenshots/04_router_chain.jpg)
 
 - 根据输入内容**动态路由**到不同的子链
 - 使用 LLM 自身来决定应该走哪条路径
@@ -224,14 +206,10 @@ LLM 的上下文窗口有限（只能处理几千个词），如何让它回答�
 
 ### 解决方案：Embeddings + Vector Store
 
-![Embeddings 概念](screenshots/05_embeddings.jpg)
-
 **Embeddings（嵌入）**：将文本转化为数值向量表示
 - 捕获文本的**语义含义**
 - 内容相似的文本 → 向量相似
 - 例如："我的猫" 和 "我的狗" 的向量接近，但和 "我的车" 的向量差异大
-
-![向量存储工作流](screenshots/05_vector_store.jpg)
 
 **Vector Store（向量存储）**工作流程：
 
@@ -262,8 +240,6 @@ response = index.query("Please list all shirts with sun protection")
 ```
 
 ### 四种文档问答方法
-
-![QA 方法对比](screenshots/05_qa_methods.jpg)
 
 | 方法 | 工作方式 | 优点 | 缺点 |
 |------|----------|------|------|
@@ -306,8 +282,6 @@ new_examples = example_gen_chain.apply_and_parse([{"doc": doc} for doc in docume
 
 #### Step 2：调试（Debug）
 
-![LangChain Debug 模式](screenshots/06_debug_mode.jpg)
-
 ```python
 import langchain
 langchain.debug = True  # 打印每个步骤的详细输入输出
@@ -338,8 +312,6 @@ graded_outputs = eval_chain.evaluate(examples, predictions)
 
 ### LangChain 评估平台
 
-![LangChain 评估平台 UI](screenshots/06_eval_platform.jpg)
-
 - 可视化每次运行的输入输出
 - 可以逐层深入查看链的每个步骤
 - 方便积累测试数据集（flywheel 飞轮效应）
@@ -352,8 +324,6 @@ graded_outputs = eval_chain.evaluate(examples, predictions)
 
 LLM 不仅是知识库，更应该被看作**推理引擎**（Reasoning Engine）：
 - 接收信息 → 思考推理 → 决定下一步行动 → 执行 → 观察结果 → 继续推理
-
-![Agent 初始化与工具配置](screenshots/07_agent_tools.jpg)
 
 ### Agent 的工作方式
 
@@ -377,8 +347,6 @@ agent = initialize_agent(
 - **ReAct**：使用 ReAct 提示策略（思考-行动-观察循环）
 
 ### Agent 推理过程示例
-
-![Agent 推理过程](screenshots/07_agent_reasoning.jpg)
 
 ```
 用户: "谁赢了2022年世界杯？"
