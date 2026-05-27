@@ -61,6 +61,43 @@ output = Linear_down(h)
 ### Mixture of Experts (MoE)
 把单个大 FFN 拆成多个小 FFN（专家），每次只激活几个 → 见 [[mixture-of-experts]]
 
+## How FFN is Trained
+
+**FFN 没有独立训练过程**——和 Attention、Embedding 一起端到端训练，普通反向传播，无特殊算法。详见 [[training-loop]]。
+
+### 训练中的角色分化（涌现）
+随着训练进行，两个 Linear 层自发分化：
+- **W_up 的每一行 → 模式探测器**："输入像不像 Paris？""是不是过去时？"
+- **W_down 的每一列 → 知识响应**："如果是法国地名，输出 France/Europe 特征"
+
+这就是 [[feed-forward-network]] 键值存储结构的来源——**不是设计的，是训练中涌现的**（Geva et al. 2021）。
+
+### FFN 训练的几个特殊性
+| 维度 | 表现 |
+|------|------|
+| 梯度行为 | 比 Attention 平滑稳定（无 softmax 饱和） |
+| 学习速度 | 比 Attention 慢，事实知识需反复看几千次 |
+| "遗忘"难度 | 最难被覆盖——这是微调改风格易、改事实难的原因 |
+| 计算占比 | 反向传播 ~60-70% 计算量在 FFN |
+| 显存占比 | 中间激活值占大头（gradient checkpointing 主要救这部分）|
+| 正则化 | Dropout 主要加在 FFN 内部和后面 |
+
+### 一个具体训练故事
+输入 "Paris is the capital of"：
+- 第 100 步：FFN 随机，预测 France 1%（瞎猜）
+- 第 100K 步：W_up 开始探测 "Paris" pattern → 预测 France 30%
+- 第 10M 步：探测器与响应矩阵紧密耦合 → 预测 France 95%
+
+事实知识就这样**逐步编码进 FFN 权重**。
+
+### MoE 训练的特殊挑战
+[[mixture-of-experts]] 引入 Router 后多了几个问题：
+- **Router 不可微**（argmax 无梯度）→ 用 top-k 加权 + Straight-Through Estimator
+- **负载不均**：Router 偏心 → 加 auxiliary load balance loss
+- **Expert Capacity**：限制每 Expert 处理 token 数，超出的丢弃
+
+这些让 MoE 训练比 Dense 模型更脆弱。
+
 ## 常见误解
 > "Attention is All You Need" 让人以为 Attention 是 Transformer 的全部
 

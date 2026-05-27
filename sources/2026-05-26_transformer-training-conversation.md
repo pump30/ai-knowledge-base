@@ -239,3 +239,34 @@ Tokenizer 训完后冻结。
 - 换 tokenizer = 换模型（embedding 全失效）
 - 中文/CJK 用 SentencePiece 直接在字节上训练，无需预分词
 - Glitch Tokens 现象：词表中"误收纳"的训练不充分 token 会让模型行为异常
+
+---
+
+## 7. FFN 是怎么训练的？
+
+**核心结论：FFN 没有独立训练过程**——和 Attention、Embedding 一起端到端训练，普通反向传播，无特殊算法。
+
+### 训练中的角色分化（涌现）
+随训练进行，两个 Linear 层自发分化：
+- W_up 每行 → 模式探测器
+- W_down 每列 → 知识响应
+
+事实知识"巴黎是法国首都"就这样逐步编码到 FFN 权重里（Geva et al. 2021 键值存储理论）。
+
+### FFN 训练的特殊性
+| 维度 | 表现 |
+|------|------|
+| 梯度 | 比 Attention 平滑稳定 |
+| 学习速度 | 慢，事实知识需反复看几千次 |
+| 遗忘难度 | 最难被覆盖（微调改风格易、改事实难） |
+| 计算占比 | 反向传播 ~60-70% 在 FFN |
+| 显存占比 | 中间激活值占大头 |
+| 正则化 | Dropout 主要加在 FFN |
+
+### 训练故事
+"Paris is the capital of" → 第 100 步预测 France 1% → 100K 步 30% → 10M 步 95%。
+
+### MoE 训练特殊挑战
+- Router 不可微 → top-k 加权 + Straight-Through Estimator
+- 负载不均 → auxiliary load balance loss
+- Expert Capacity → 超量 token 被丢弃
