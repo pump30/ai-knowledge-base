@@ -23,9 +23,9 @@ Claude Code 是 Anthropic 推出的高度自主编程助手（CLI + Desktop + We
 - 上下文管理是核心挑战
 
 ## Sources
-- [[claude-code-agentic-coding-assistant]]
-- [[agent-skills-anthropic]]
-- [[mcp-rich-context-ai-apps-anthropic]]
+- [[2026-01-14_claude-code-agentic-coding-assistant]]
+- [[2026-01-15_agent-skills-anthropic]]
+- [[2026-01-13_mcp-rich-context-ai-apps-anthropic]]
 
 ## Related
 - [[mcp-model-context-protocol]]

@@ -14,9 +14,9 @@ Anthropic 是 Claude 系列模型的开发公司，在 AI Agent 工具链方面�
 - 教育合作：与 DeepLearning.AI 合作课程（MCP、Claude Code、Agent Skills）
 
 ## Sources
-- [[mcp-rich-context-ai-apps-anthropic]]
-- [[claude-code-agentic-coding-assistant]]
-- [[agent-skills-anthropic]]
+- [[2026-01-13_mcp-rich-context-ai-apps-anthropic]]
+- [[2026-01-14_claude-code-agentic-coding-assistant]]
+- [[2026-01-15_agent-skills-anthropic]]
 
 ## Related
 - [[claude-code]]

@@ -18,8 +18,8 @@ Chain of Thought 是让 LLM 逐步推理的技术，通过在 prompt 中要求�
 | 适用场景 | 单任务推理 | 复杂系统流程 |
 
 ## Sources
-- [[building-systems-chatgpt-api]]
-- [[chatgpt-prompt-engineering]]
+- [[2026-01-04_building-systems-chatgpt-api]]
+- [[2026-01-03_chatgpt-prompt-engineering]]
 
 ## Related
 - [[prompt-engineering]]

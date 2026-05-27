@@ -28,8 +28,8 @@ LangGraph 是 LangChain 生态的 Agent 编排框架，基于图（Graph）结�
 - 追踪/调试：集成 LangSmith
 
 ## Sources
-- [[ai-agents-langgraph]]
-- [[ai-agents-langgraph-extended]]
+- [[2026-01-10_ai-agents-langgraph]]
+- [[2026-01-10_ai-agents-langgraph-extended]]
 
 ## Related
 - [[langchain]]

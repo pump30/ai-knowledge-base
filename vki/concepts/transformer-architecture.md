@@ -17,9 +17,9 @@ Transformer 是现代 LLM 的核心架构，由 Google Brain 在 2017 年论文 
 2. Original Transformer → Modern Transformer (RoPE, Pre-Norm, MoE)
 
 ## Sources
-- [[transformer-llm-how-they-work]]
-- [[understanding-language-models-transformers]]
-- [[attention-in-transformers-pytorch]]
+- [[2026-01-01_transformer-llm-how-they-work]]
+- [[2026-01-01_understanding-language-models-transformers]]
+- [[2026-01-02_attention-in-transformers-pytorch]]
 
 ## Related
 - [[attention-mechanism]]

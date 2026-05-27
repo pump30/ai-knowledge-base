@@ -35,10 +35,10 @@ AI Agent 是能够自主规划、使用工具、反思和协作的 LLM 系统。
 - Supervisor：一个 Manager 协调多个 Worker
 
 ## Sources
-- [[ai-agents-langgraph]]
-- [[ai-agents-langgraph-extended]]
-- [[multi-agent-systems-crewai]]
-- [[functions-tools-agents-langchain]]
+- [[2026-01-10_ai-agents-langgraph]]
+- [[2026-01-10_ai-agents-langgraph-extended]]
+- [[2026-01-11_multi-agent-systems-crewai]]
+- [[2026-01-06_functions-tools-agents-langchain]]
 
 ## Related
 - [[react-pattern]]

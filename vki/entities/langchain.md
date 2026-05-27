@@ -15,9 +15,9 @@ LangChain 是最流行的 LLM 应用开发框架，提供 Models、Prompts、Par
 - 生态系统：LangGraph, LangSmith, LangServe, LangChain Hub
 
 ## Sources
-- [[langchain-llm-app-development]]
-- [[functions-tools-agents-langchain]]
-- [[ai-agents-langgraph]]
+- [[2026-01-05_langchain-llm-app-development]]
+- [[2026-01-06_functions-tools-agents-langchain]]
+- [[2026-01-10_ai-agents-langgraph]]
 
 ## Related
 - [[langgraph]]

@@ -17,8 +17,8 @@ Prompt Engineering 是设计和优化 LLM 输入指令的技术，通过结构�
 - 但需要注意：幻觉问题、Prompt Injection 攻击
 
 ## Sources
-- [[chatgpt-prompt-engineering]]
-- [[building-systems-chatgpt-api]]
+- [[2026-01-03_chatgpt-prompt-engineering]]
+- [[2026-01-04_building-systems-chatgpt-api]]
 
 ## Related
 - [[chain-of-thought]]

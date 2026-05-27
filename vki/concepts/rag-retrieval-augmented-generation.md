@@ -32,10 +32,10 @@ RAG 是将外部知识检索与 LLM 生成结合的架构模式。核心流程�
 - MMR (Maximal Marginal Relevance)：平衡相关性和多样性
 
 ## Sources
-- [[building-evaluating-advanced-rag]]
-- [[retrieval-optimization-tokenization-vector-quantization]]
-- [[embedding-models-architecture-implementation]]
-- [[langchain-llm-app-development]]
+- [[2026-01-08_building-evaluating-advanced-rag]]
+- [[2026-01-09_retrieval-optimization-tokenization-vector-quantization]]
+- [[2026-01-07_embedding-models-architecture-implementation]]
+- [[2026-01-05_langchain-llm-app-development]]
 
 ## Related
 - [[embedding-models]]

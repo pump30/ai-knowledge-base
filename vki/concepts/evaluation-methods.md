@@ -36,9 +36,9 @@
 - 数据闭环：生产问题 → 评估数据集 → 改进 → 部署
 
 ## Sources
-- [[evaluating-ai-agents]]
-- [[building-evaluating-advanced-rag]]
-- [[building-systems-chatgpt-api]]
+- [[2026-01-12_evaluating-ai-agents]]
+- [[2026-01-08_building-evaluating-advanced-rag]]
+- [[2026-01-04_building-systems-chatgpt-api]]
 
 ## Related
 - [[rag-retrieval-augmented-generation]]

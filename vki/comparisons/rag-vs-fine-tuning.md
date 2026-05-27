@@ -20,8 +20,8 @@ RAG 通过外部检索提供知识，不改变模型本身；Fine-tuning 修改�
 - **Both**：Fine-tune 提升检索/回答质量 + RAG 提供最新知识
 
 ## Sources
-- [[building-evaluating-advanced-rag]]
-- [[embedding-models-architecture-implementation]]
+- [[2026-01-08_building-evaluating-advanced-rag]]
+- [[2026-01-07_embedding-models-architecture-implementation]]
 
 ## Related
 - [[rag-retrieval-augmented-generation]]

@@ -74,7 +74,7 @@ MoE 是现代大模型的关键架构创新：把 Transformer Block 中**单个�
 - **共享 Expert + 路由 Expert**：DeepSeek 等模型保留少量"通用专家"
 
 ## Sources
-- [[transformer-llm-how-they-work]]
+- [[2026-01-01_transformer-llm-how-they-work]]
 - [[2026-05-26_transformer-training-conversation]]
 
 ## Related

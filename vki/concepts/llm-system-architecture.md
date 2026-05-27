@@ -27,9 +27,9 @@
 - 内置优势：async/batch/streaming/fallback/parallelization
 
 ## Sources
-- [[building-systems-chatgpt-api]]
-- [[langchain-llm-app-development]]
-- [[functions-tools-agents-langchain]]
+- [[2026-01-04_building-systems-chatgpt-api]]
+- [[2026-01-05_langchain-llm-app-development]]
+- [[2026-01-06_functions-tools-agents-langchain]]
 
 ## Related
 - [[prompt-engineering]]

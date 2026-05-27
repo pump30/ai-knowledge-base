@@ -20,9 +20,9 @@
 - **Subagents**：并行独立任务、需要隔离上下文
 
 ## Sources
-- [[agent-skills-anthropic]]
-- [[mcp-rich-context-ai-apps-anthropic]]
-- [[claude-code-agentic-coding-assistant]]
+- [[2026-01-15_agent-skills-anthropic]]
+- [[2026-01-13_mcp-rich-context-ai-apps-anthropic]]
+- [[2026-01-14_claude-code-agentic-coding-assistant]]
 
 ## Related
 - [[skills-system]]

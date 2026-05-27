@@ -35,7 +35,7 @@ GPT-4 级别训练估算：
 
 ## Sources
 - [[2026-05-26_transformer-training-conversation]]
-- [[transformer-llm-how-they-work]]
+- [[2026-01-01_transformer-llm-how-they-work]]
 
 ## Related
 - [[transformer-architecture]]

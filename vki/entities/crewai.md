@@ -24,7 +24,7 @@ crewAI 是专注于角色扮演多智能体协作的框架，创始人 Joao Mour
 | 上手难度 | 低 | 中 |
 
 ## Sources
-- [[multi-agent-systems-crewai]]
+- [[2026-01-11_multi-agent-systems-crewai]]
 
 ## Related
 - [[langgraph]]

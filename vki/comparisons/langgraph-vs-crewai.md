@@ -23,8 +23,8 @@ LangGraph 是低层图编排框架，灵活性高；crewAI 是高层角色扮演
 - **crewAI**：快速搭建多 Agent 系统、角色分工明确、标准协作模式足够
 
 ## Sources
-- [[ai-agents-langgraph]]
-- [[multi-agent-systems-crewai]]
+- [[2026-01-10_ai-agents-langgraph]]
+- [[2026-01-11_multi-agent-systems-crewai]]
 
 ## Related
 - [[langgraph]]

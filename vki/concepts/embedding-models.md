@@ -23,8 +23,8 @@ Embedding 将文本映射为稠密向量表示，是语义搜索和 RAG 的基�
 - E5：Microsoft 的通用嵌入模型
 
 ## Sources
-- [[embedding-models-architecture-implementation]]
-- [[retrieval-optimization-tokenization-vector-quantization]]
+- [[2026-01-07_embedding-models-architecture-implementation]]
+- [[2026-01-09_retrieval-optimization-tokenization-vector-quantization]]
 
 ## Related
 - [[rag-retrieval-augmented-generation]]

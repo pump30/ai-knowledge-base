@@ -17,8 +17,8 @@ Attention 是 Transformer 的核心计算单元，让模型能够动态关注输
 - KV Cache：缓存已计算的 K/V 避免重复计算
 
 ## Sources
-- [[attention-in-transformers-pytorch]]
-- [[transformer-llm-how-they-work]]
+- [[2026-01-02_attention-in-transformers-pytorch]]
+- [[2026-01-01_transformer-llm-how-they-work]]
 
 ## Related
 - [[transformer-architecture]]
