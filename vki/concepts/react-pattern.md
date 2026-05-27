@@ -22,9 +22,9 @@ Thought → Action → Pause → Observation → Thought → ... → Final Answe
 | 日志/追踪 | 自己实现 | 集成 LangSmith |
 
 ## Sources
-- [[ai-agents-langgraph]]
-- [[functions-tools-agents-langchain]]
-- [[langchain-llm-app-development]]
+- [[2026-01-10_ai-agents-langgraph]]
+- [[2026-01-06_functions-tools-agents-langchain]]
+- [[2026-01-05_langchain-llm-app-development]]
 
 ## Related
 - [[ai-agent-design-patterns]]

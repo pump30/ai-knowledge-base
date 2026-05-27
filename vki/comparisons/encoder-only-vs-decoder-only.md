@@ -24,9 +24,9 @@ Encoder-only（如 BERT）擅长理解/分类任务，使用双向 Self-Attentio
 - 2020+: Decoder-only 成为绝对主流
 
 ## Sources
-- [[transformer-llm-how-they-work]]
-- [[understanding-language-models-transformers]]
-- [[attention-in-transformers-pytorch]]
+- [[2026-01-01_transformer-llm-how-they-work]]
+- [[2026-01-01_understanding-language-models-transformers]]
+- [[2026-01-02_attention-in-transformers-pytorch]]
 
 ## Related
 - [[transformer-architecture]]

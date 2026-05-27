@@ -40,9 +40,9 @@ Decoder-only 模型（GPT/Claude/Llama）的核心训练方式：给定前 N 个
 
 ## Sources
 - [[2026-05-26_transformer-training-conversation]]
-- [[transformer-llm-how-they-work]]
-- [[understanding-language-models-transformers]]
-- [[attention-in-transformers-pytorch]]
+- [[2026-01-01_transformer-llm-how-they-work]]
+- [[2026-01-01_understanding-language-models-transformers]]
+- [[2026-01-02_attention-in-transformers-pytorch]]
 
 ## Related
 - [[masked-language-modeling]]

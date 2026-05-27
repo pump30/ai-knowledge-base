@@ -44,9 +44,9 @@ Encoder-only 模型（BERT 系列）的核心训练方式：随机遮盖输入�
 
 ## Sources
 - [[2026-05-26_transformer-training-conversation]]
-- [[transformer-llm-how-they-work]]
-- [[understanding-language-models-transformers]]
-- [[attention-in-transformers-pytorch]]
+- [[2026-01-01_transformer-llm-how-they-work]]
+- [[2026-01-01_understanding-language-models-transformers]]
+- [[2026-01-02_attention-in-transformers-pytorch]]
 
 ## Related
 - [[next-token-prediction]]

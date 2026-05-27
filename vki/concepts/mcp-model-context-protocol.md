@@ -25,9 +25,9 @@ MCP 是 Anthropic 推出的开放标准协议，用于标准化 LLM 与外部系
 - 递归组合：Client 可以是 Server，Server 可以是 Client
 
 ## Sources
-- [[mcp-rich-context-ai-apps-anthropic]]
-- [[claude-code-agentic-coding-assistant]]
-- [[agent-skills-anthropic]]
+- [[2026-01-13_mcp-rich-context-ai-apps-anthropic]]
+- [[2026-01-14_claude-code-agentic-coding-assistant]]
+- [[2026-01-15_agent-skills-anthropic]]
 
 ## Related
 - [[ai-agent-design-patterns]]

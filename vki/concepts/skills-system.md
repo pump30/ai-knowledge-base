@@ -26,8 +26,8 @@ Skills 是指令文件夹形式的 Agent 能力扩展机制（Anthropic 提出�
 - Agent 架构演进：单一用途 → 简单脚手架 → Skills 增强脚手架（最优平衡）
 
 ## Sources
-- [[agent-skills-anthropic]]
-- [[claude-code-agentic-coding-assistant]]
+- [[2026-01-15_agent-skills-anthropic]]
+- [[2026-01-14_claude-code-agentic-coding-assistant]]
 
 ## Related
 - [[mcp-model-context-protocol]]

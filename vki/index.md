@@ -4,12 +4,13 @@
 
 ---
 
-## Concepts (18)
+## Concepts (21)
 
 | Page | Description | Sources | Updated |
 |------|-------------|---------|---------|
 | [[transformer-architecture]] | Transformer 核心架构：Self-Attention、Q/K/V、现代改进 | 3篇 | 2026-05-26 |
 | [[attention-mechanism]] | Attention 机制：Self/Masked/Cross、Multi-Head、GQA | 2篇 | 2026-05-26 |
+| [[kv-cache]] | KV Cache：自回归推理的核心加速、长上下文显存瓶颈 | 1篇 | 2026-05-27 |
 | [[feed-forward-network]] | FFN：Transformer 知识存储主力，占 67% 参数 | 3篇 | 2026-05-26 |
 | [[mixture-of-experts]] | MoE：拆 FFN 为多专家，激活 top-k，GPT-4/Mixtral 核心 | 2篇 | 2026-05-26 |
 | [[tokenization]] | 分词：BPE/WordPiece/SentencePiece，词表训练 vs 算法设计 | 2篇 | 2026-05-26 |
@@ -17,7 +18,9 @@
 | [[next-token-prediction]] | 自回归训练：Decoder-only 模型的核心训练范式 | 4篇 | 2026-05-26 |
 | [[masked-language-modeling]] | MLM 训练方式：BERT 的双向遮盖预测 | 4篇 | 2026-05-26 |
 | [[prompt-engineering]] | Prompt 设计两大原则、六大策略、迭代开发 | 2篇 | 2026-05-24 |
+| [[prompt-injection-defense]] | Prompt 注入防御：分隔符、结构化输出、双向 Moderation | 2篇 | 2026-05-27 |
 | [[rag-retrieval-augmented-generation]] | RAG 全流程：检索增强生成、Sentence Window、Auto-merging | 4篇 | 2026-05-24 |
+| [[vector-quantization]] | 向量量化：SQ/PQ/BQ 三种压缩方案对比 | 2篇 | 2026-05-27 |
 | [[embedding-models]] | Embedding 演进：Word2Vec→BERT→Dual Encoder、对比学习 | 2篇 | 2026-05-24 |
 | [[ai-agent-design-patterns]] | Agent 五大模式：Planning、Tool Use、Reflection、Multi-agent、Memory | 4篇 | 2026-05-24 |
 | [[mcp-model-context-protocol]] | MCP 开放标准：Tools/Resources/Prompts 三大原语 | 3篇 | 2026-05-24 |
@@ -81,6 +84,6 @@
 
 ---
 
-*Last health check: 2026-05-26 (added FFN, MoE concepts; fixed broken link)*
-*Total VKI pages: 28*
+*Last health check: 2026-05-27 (fixed 71 ghost links → dated source filenames; added kv-cache, prompt-injection-defense, vector-quantization)*
+*Total VKI pages: 31*
 *Total sources: 19*

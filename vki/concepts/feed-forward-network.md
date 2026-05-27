@@ -106,8 +106,8 @@ output = Linear_down(h)
 - **FFN = 工作主力**（占 2/3 参数和大部分计算）
 
 ## Sources
-- [[transformer-llm-how-they-work]]
-- [[understanding-language-models-transformers]]
+- [[2026-01-01_transformer-llm-how-they-work]]
+- [[2026-01-01_understanding-language-models-transformers]]
 - [[2026-05-26_transformer-training-conversation]]
 
 ## Related
