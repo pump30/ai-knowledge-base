@@ -1,0 +1,18 @@
+# Obsidian local config (per-user UI state, plugins, themes)
+.obsidian/
+
+# Local-only screenshots (personal reference, not part of the knowledge base)
+screenshots/
+
+# macOS system files
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temp / backup
+*.bak
+*.tmp
