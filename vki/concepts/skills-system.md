@@ -21,15 +21,24 @@ Skills 是指令文件夹形式的 Agent 能力扩展机制（Anthropic 提出�
 2. **可重复工作流**：标准化复杂流程（TDD、调试、代码审查）
 3. **新能力**：扩展 Agent 能做的事
 
+## 企业应用：SAP Application Foundation Skills
+SAP Application Foundation 将 Skills 概念应用于企业 Agent 开发辅助：
+- Skills 是**开发时**辅助 Cline（AI 编码助手）的工具，不是部署到 agent 中的运行时能力
+- 预置 Skills：SAP Agent Bootstrap（脚手架）、SAP Agent Instrumentation（可观测性）、SAP Agent Run Local（本地测试）
+- 让 Cline 更懂 Application Foundation 的项目结构和配置方式
+
 ## 注意事项
 - Subagents 不继承父 Agent 的 Skills（需显式指定）
 - Agent 架构演进：单一用途 → 简单脚手架 → Skills 增强脚手架（最优平衡）
+- SAP Application Foundation 中 Skills ≠ Agent 的运行时能力（仅限开发时辅助）
 
 ## Sources
 - [[2026-01-15_agent-skills-anthropic]]
 - [[2026-01-14_claude-code-agentic-coding-assistant]]
+- [[2026-08-04_sap-application-foundation-overview]]
 
 ## Related
 - [[mcp-model-context-protocol]]
 - [[claude-code]]
 - [[ai-agent-design-patterns]]
+- [[sap-application-foundation]]

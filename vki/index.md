@@ -30,7 +30,7 @@
 | [[react-pattern]] | ReAct 执行循环：Thought→Action→Observation | 3篇 | 2026-05-24 |
 | [[chain-of-thought]] | CoT 逐步推理 vs Chaining Prompts 多步 pipeline | 2篇 | 2026-05-24 |
 
-## Entities (6)
+## Entities (7)
 
 | Page | Type | Description | Sources | Updated |
 |------|------|-------------|---------|---------|
@@ -40,6 +40,7 @@
 | [[claude-code]] | Tool | Anthropic 自主编程助手：Agentic Search、CLAUDE.md、MCP | 3篇 | 2026-05-24 |
 | [[anthropic]] | Organization | Claude 模型/MCP/Skills 的开发公司 | 3篇 | 2026-05-24 |
 | [[deeplearning-ai]] | Education | Andrew Ng 的 AI 教育平台，短课程合作方 | 6篇 | 2026-05-24 |
+| [[sap-application-foundation]] | Platform | SAP BTP 上构建 code-based AI agents 的综合平台：Kyma + AI Core + SDK | 1篇 | 2026-08-04 |
 
 ## Comparisons (4)
 
@@ -81,9 +82,10 @@
 | claude-code-agentic-coding-assistant | Claude Code 自主编程助手 | 2026-01-14 |
 | agent-skills-anthropic | Anthropic Agent Skills | 2026-01-15 |
 | 2026-05-26_transformer-training-conversation | Transformer 训练原理对话 | 2026-05-26 |
+| 2026-08-04_sap-application-foundation-overview | SAP Application Foundation 概览（code-based AI agents 平台） | 2026-08-04 |
 
 ---
 
 *Last health check: 2026-05-27 (fixed 71 ghost links → dated source filenames; added kv-cache, prompt-injection-defense, vector-quantization)*
-*Total VKI pages: 31*
-*Total sources: 19*
+*Total VKI pages: 32*
+*Total sources: 20*
